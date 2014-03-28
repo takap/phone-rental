@@ -51,7 +51,7 @@ gem 'haml-rails'
 gem 'simple_form'
 
 # Twitter bootstrap
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
 
 # Google Analytics
 gem 'google-analytics-rails'
