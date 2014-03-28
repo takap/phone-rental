@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -30,11 +30,44 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
+
+# Use active decorator
+gem 'active_decorator'
+
+# Suppress assets log
+gem 'quiet_assets'
+
+# Use Haml
+gem 'haml-rails'
+
+# Use simple form
+gem 'simple_form'
+
+# Twitter bootstrap
+gem 'twitter-bootstrap-rails'
+
+# Google Analytics
+gem 'google-analytics-rails'
+
+# parallax effect
+gem 'skrollr-rails'
+
+# New Relic
+gem 'newrelic_rpm', group: :production
+
+group :development, :test do
+  # Use RSpec
+  gem 'rspec-rails'
+  # Simulate
+  gem 'capybara'
+  # Detect N+1 problem
+  gem 'bullet'
+end
 
