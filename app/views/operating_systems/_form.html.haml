@@ -1,9 +1,5 @@
-= simple_form_for(@operating_system) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :version_name
-    = f.input :version_code
-
-  .form-actions
-    = f.button :submit
+= simple_form_for @operating_system, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :version_name
+  = f.input :version_code
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), operating_systems_path, :class => 'btn btn-default'

@@ -1,21 +1,23 @@
-%h1 Listing operating_systems
-
-%table
-  %tr
-    %th Version name
-    %th Version code
-    %th
-    %th
-    %th
-
-  - @operating_systems.each do |operating_system|
+- model_class = OperatingSystem
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
     %tr
-      %td= operating_system.version_name
-      %td= operating_system.version_code
-      %td= link_to 'Show', operating_system
-      %td= link_to 'Edit', edit_operating_system_path(operating_system)
-      %td= link_to 'Destroy', operating_system, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:version_name)
+      %th= model_class.human_attribute_name(:version_code)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @operating_systems.each do |operating_system|
+      %tr
+        %td= link_to operating_system.id, operating_system_path(operating_system)
+        %td= operating_system.version_name
+        %td= operating_system.version_code
+        %td=l operating_system.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_operating_system_path(operating_system), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), operating_system_path(operating_system), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Operating system', new_operating_system_path
+= link_to t('.new', :default => t("helpers.links.new")), new_operating_system_path, :class => 'btn btn-primary'

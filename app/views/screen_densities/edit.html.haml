@@ -1,7 +1,4 @@
-%h1 Editing screen_density
-
-= render 'form'
-
-= link_to 'Show', @screen_density
-\|
-= link_to 'Back', screen_densities_path
+- model_class = ScreenDensity
+.page-header
+  %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

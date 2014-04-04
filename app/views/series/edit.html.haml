@@ -1,7 +1,4 @@
-%h1 Editing series
-
-= render 'form'
-
-= link_to 'Show', @series
-\|
-= link_to 'Back', series_index_path
+- model_class = Series
+.page-header
+  %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

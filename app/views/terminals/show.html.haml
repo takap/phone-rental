@@ -1,30 +1,41 @@
-%p#notice= notice
+- model_class = Terminal
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
-  %b Name:
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
   = @terminal.name
 %p
-  %b Terminal master:
-  = @terminal.terminal_master
+  %strong= model_class.human_attribute_name(:terminal_master_id) + ':'
+  %br
+  = @terminal.terminal_master_id
 %p
-  %b Volume:
+  %strong= model_class.human_attribute_name(:volume) + ':'
+  %br
   = @terminal.volume
 %p
-  %b Color:
-  = @terminal.color
+  %strong= model_class.human_attribute_name(:color_id) + ':'
+  %br
+  = @terminal.color_id
 %p
-  %b Phone number:
+  %strong= model_class.human_attribute_name(:phone_number) + ':'
+  %br
   = @terminal.phone_number
 %p
-  %b Updated os:
-  = @terminal.updated_os
+  %strong= model_class.human_attribute_name(:updated_os_id) + ':'
+  %br
+  = @terminal.updated_os_id
 %p
-  %b Place:
-  = @terminal.place
+  %strong= model_class.human_attribute_name(:place_id) + ':'
+  %br
+  = @terminal.place_id
 %p
-  %b Wifi:
+  %strong= model_class.human_attribute_name(:wifi) + ':'
+  %br
   = @terminal.wifi
 
-= link_to 'Edit', edit_terminal_path(@terminal)
-\|
-= link_to 'Back', terminals_path
+
+= link_to t('.back', :default => t("helpers.links.back")), terminals_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_terminal_path(@terminal), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), terminal_path(@terminal), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

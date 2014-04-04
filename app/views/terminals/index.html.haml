@@ -1,33 +1,35 @@
-%h1 Listing terminals
-
-%table
-  %tr
-    %th Name
-    %th Terminal master
-    %th Volume
-    %th Color
-    %th Phone number
-    %th Updated os
-    %th Place
-    %th Wifi
-    %th
-    %th
-    %th
-
-  - @terminals.each do |terminal|
+- model_class = Terminal
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
     %tr
-      %td= terminal.name
-      %td= terminal.terminal_master
-      %td= terminal.volume
-      %td= terminal.color
-      %td= terminal.phone_number
-      %td= terminal.updated_os
-      %td= terminal.place
-      %td= terminal.wifi
-      %td= link_to 'Show', terminal
-      %td= link_to 'Edit', edit_terminal_path(terminal)
-      %td= link_to 'Destroy', terminal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:terminal_master_id)
+      %th= model_class.human_attribute_name(:volume)
+      %th= model_class.human_attribute_name(:color_id)
+      %th= model_class.human_attribute_name(:phone_number)
+      %th= model_class.human_attribute_name(:updated_os_id)
+      %th= model_class.human_attribute_name(:place_id)
+      %th= model_class.human_attribute_name(:wifi)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @terminals.each do |terminal|
+      %tr
+        %td= link_to terminal.id, terminal_path(terminal)
+        %td= terminal.name
+        %td= terminal.terminal_master_id
+        %td= terminal.volume
+        %td= terminal.color_id
+        %td= terminal.phone_number
+        %td= terminal.updated_os_id
+        %td= terminal.place_id
+        %td= terminal.wifi
+        %td=l terminal.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_terminal_path(terminal), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), terminal_path(terminal), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Terminal', new_terminal_path
+= link_to t('.new', :default => t("helpers.links.new")), new_terminal_path, :class => 'btn btn-primary'

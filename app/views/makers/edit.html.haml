@@ -1,7 +1,4 @@
-%h1 Editing maker
-
-= render 'form'
-
-= link_to 'Show', @maker
-\|
-= link_to 'Back', makers_path
+- model_class = Maker
+.page-header
+  %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

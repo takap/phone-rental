@@ -1,21 +1,23 @@
-%h1 Listing models
-
-%table
-  %tr
-    %th Name
-    %th Name kana
-    %th
-    %th
-    %th
-
-  - @models.each do |model|
+- model_class = Model
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
     %tr
-      %td= model.name
-      %td= model.name_kana
-      %td= link_to 'Show', model
-      %td= link_to 'Edit', edit_model_path(model)
-      %td= link_to 'Destroy', model, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:name_kana)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @models.each do |model|
+      %tr
+        %td= link_to model.id, model_path(model)
+        %td= model.name
+        %td= model.name_kana
+        %td=l model.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_model_path(model), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), model_path(model), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Model', new_model_path
+= link_to t('.new', :default => t("helpers.links.new")), new_model_path, :class => 'btn btn-primary'

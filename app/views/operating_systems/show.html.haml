@@ -1,12 +1,17 @@
-%p#notice= notice
+- model_class = OperatingSystem
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
-  %b Version name:
+  %strong= model_class.human_attribute_name(:version_name) + ':'
+  %br
   = @operating_system.version_name
 %p
-  %b Version code:
+  %strong= model_class.human_attribute_name(:version_code) + ':'
+  %br
   = @operating_system.version_code
 
-= link_to 'Edit', edit_operating_system_path(@operating_system)
-\|
-= link_to 'Back', operating_systems_path
+
+= link_to t('.back', :default => t("helpers.links.back")), operating_systems_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_operating_system_path(@operating_system), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), operating_system_path(@operating_system), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

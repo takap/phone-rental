@@ -1,42 +1,57 @@
-%p#notice= notice
+- model_class = TerminalMaster
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
-  %b Carrier:
-  = @terminal_master.carrier
+  %strong= model_class.human_attribute_name(:carrier_id) + ':'
+  %br
+  = @terminal_master.carrier_id
 %p
-  %b Maker:
-  = @terminal_master.maker
+  %strong= model_class.human_attribute_name(:maker_id) + ':'
+  %br
+  = @terminal_master.maker_id
 %p
-  %b Series:
-  = @terminal_master.series
+  %strong= model_class.human_attribute_name(:series_id) + ':'
+  %br
+  = @terminal_master.series_id
 %p
-  %b Model:
-  = @terminal_master.model
+  %strong= model_class.human_attribute_name(:model_id) + ':'
+  %br
+  = @terminal_master.model_id
 %p
-  %b Default os:
-  = @terminal_master.default_os
+  %strong= model_class.human_attribute_name(:default_os_id) + ':'
+  %br
+  = @terminal_master.default_os_id
 %p
-  %b Screen inch:
-  = @terminal_master.screen_inch
+  %strong= model_class.human_attribute_name(:screen_inch_id) + ':'
+  %br
+  = @terminal_master.screen_inch_id
 %p
-  %b Screen width:
-  = @terminal_master.screen_width
+  %strong= model_class.human_attribute_name(:screen_width_id) + ':'
+  %br
+  = @terminal_master.screen_width_id
 %p
-  %b Screen height:
-  = @terminal_master.screen_height
+  %strong= model_class.human_attribute_name(:screen_height_id) + ':'
+  %br
+  = @terminal_master.screen_height_id
 %p
-  %b Screen density:
-  = @terminal_master.screen_density
+  %strong= model_class.human_attribute_name(:screen_density_id) + ':'
+  %br
+  = @terminal_master.screen_density_id
 %p
-  %b Release date:
+  %strong= model_class.human_attribute_name(:release_date) + ':'
+  %br
   = @terminal_master.release_date
 %p
-  %b Tablet:
+  %strong= model_class.human_attribute_name(:tablet) + ':'
+  %br
   = @terminal_master.tablet
 %p
-  %b Nfc:
+  %strong= model_class.human_attribute_name(:nfc) + ':'
+  %br
   = @terminal_master.nfc
 
-= link_to 'Edit', edit_terminal_master_path(@terminal_master)
-\|
-= link_to 'Back', terminal_masters_path
+
+= link_to t('.back', :default => t("helpers.links.back")), terminal_masters_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_terminal_master_path(@terminal_master), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), terminal_master_path(@terminal_master), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

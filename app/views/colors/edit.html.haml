@@ -1,7 +1,4 @@
-%h1 Editing color
-
-= render 'form'
-
-= link_to 'Show', @color
-\|
-= link_to 'Back', colors_path
+- model_class = Color
+.page-header
+  %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

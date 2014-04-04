@@ -1,7 +1,4 @@
-%h1 Editing operating_system
-
-= render 'form'
-
-= link_to 'Show', @operating_system
-\|
-= link_to 'Back', operating_systems_path
+- model_class = OperatingSystem
+.page-header
+  %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

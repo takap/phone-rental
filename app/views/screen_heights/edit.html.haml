@@ -1,7 +1,4 @@
-%h1 Editing screen_height
-
-= render 'form'
-
-= link_to 'Show', @screen_height
-\|
-= link_to 'Back', screen_heights_path
+- model_class = ScreenHeight
+.page-header
+  %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

@@ -1,15 +1,11 @@
-= simple_form_for(@terminal) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :name
-    = f.association :terminal_master
-    = f.input :volume
-    = f.association :color
-    = f.input :phone_number
-    = f.association :updated_os
-    = f.association :place
-    = f.input :wifi
-
-  .form-actions
-    = f.button :submit
+= simple_form_for @terminal, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :terminal_master_id
+  = f.input :volume
+  = f.input :color_id
+  = f.input :phone_number
+  = f.input :updated_os_id
+  = f.input :place_id
+  = f.input :wifi
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), terminals_path, :class => 'btn btn-default'

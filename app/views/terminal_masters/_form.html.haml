@@ -1,19 +1,15 @@
-= simple_form_for(@terminal_master) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.association :carrier
-    = f.association :maker
-    = f.association :series
-    = f.association :model
-    = f.association :default_os
-    = f.association :screen_inch
-    = f.association :screen_width
-    = f.association :screen_height
-    = f.association :screen_density
-    = f.input :release_date
-    = f.input :tablet
-    = f.input :nfc
-
-  .form-actions
-    = f.button :submit
+= simple_form_for @terminal_master, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :carrier_id
+  = f.input :maker_id
+  = f.input :series_id
+  = f.input :model_id
+  = f.input :default_os_id
+  = f.input :screen_inch_id
+  = f.input :screen_width_id
+  = f.input :screen_height_id
+  = f.input :screen_density_id
+  = f.input :release_date
+  = f.input :tablet
+  = f.input :nfc
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), terminal_masters_path, :class => 'btn btn-default'

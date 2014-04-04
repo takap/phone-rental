@@ -1,19 +1,21 @@
-%h1 Listing screen_densities
-
-%table
-  %tr
-    %th Size
-    %th
-    %th
-    %th
-
-  - @screen_densities.each do |screen_density|
+- model_class = ScreenDensity
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
     %tr
-      %td= screen_density.size
-      %td= link_to 'Show', screen_density
-      %td= link_to 'Edit', edit_screen_density_path(screen_density)
-      %td= link_to 'Destroy', screen_density, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:size)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @screen_densities.each do |screen_density|
+      %tr
+        %td= link_to screen_density.id, screen_density_path(screen_density)
+        %td= screen_density.size
+        %td=l screen_density.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_screen_density_path(screen_density), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), screen_density_path(screen_density), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Screen density', new_screen_density_path
+= link_to t('.new', :default => t("helpers.links.new")), new_screen_density_path, :class => 'btn btn-primary'

@@ -1,8 +1,4 @@
-= simple_form_for(@screen_width) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :size
-
-  .form-actions
-    = f.button :submit
+= simple_form_for @screen_width, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :size
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), screen_widths_path, :class => 'btn btn-default'

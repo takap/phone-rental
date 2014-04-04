@@ -1,9 +1,5 @@
-= simple_form_for(@color) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :name
-    = f.input :hex
-
-  .form-actions
-    = f.button :submit
+= simple_form_for @color, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :hex
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), colors_path, :class => 'btn btn-default'

@@ -1,21 +1,23 @@
-%h1 Listing carriers
-
-%table
-  %tr
-    %th Name
-    %th Name kana
-    %th
-    %th
-    %th
-
-  - @carriers.each do |carrier|
+- model_class = Carrier
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
     %tr
-      %td= carrier.name
-      %td= carrier.name_kana
-      %td= link_to 'Show', carrier
-      %td= link_to 'Edit', edit_carrier_path(carrier)
-      %td= link_to 'Destroy', carrier, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:name_kana)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @carriers.each do |carrier|
+      %tr
+        %td= link_to carrier.id, carrier_path(carrier)
+        %td= carrier.name
+        %td= carrier.name_kana
+        %td=l carrier.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_carrier_path(carrier), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), carrier_path(carrier), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Carrier', new_carrier_path
+= link_to t('.new', :default => t("helpers.links.new")), new_carrier_path, :class => 'btn btn-primary'
