@@ -53,6 +53,9 @@ gem 'simple_form'
 # Twitter bootstrap
 gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
 
+# Use devise
+gem 'devise'
+
 # Google Analytics
 gem 'google-analytics-rails'
 
@@ -69,5 +72,7 @@ group :development, :test do
   gem 'capybara'
   # Detect N+1 problem
   gem 'bullet'
+  # Use html2haml
+  gem 'html2haml'
 end
 
