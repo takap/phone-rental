@@ -1,0 +1,2 @@
+module ScreenInchesHelper
+end

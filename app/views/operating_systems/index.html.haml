@@ -1,0 +1,21 @@
+%h1 Listing operating_systems
+
+%table
+  %tr
+    %th Version name
+    %th Version code
+    %th
+    %th
+    %th
+
+  - @operating_systems.each do |operating_system|
+    %tr
+      %td= operating_system.version_name
+      %td= operating_system.version_code
+      %td= link_to 'Show', operating_system
+      %td= link_to 'Edit', edit_operating_system_path(operating_system)
+      %td= link_to 'Destroy', operating_system, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Operating system', new_operating_system_path

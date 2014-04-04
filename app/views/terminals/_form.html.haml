@@ -1,0 +1,15 @@
+= simple_form_for(@terminal) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.association :terminal_master
+    = f.input :volume
+    = f.association :color
+    = f.input :phone_number
+    = f.association :updated_os
+    = f.association :place
+    = f.input :wifi
+
+  .form-actions
+    = f.button :submit

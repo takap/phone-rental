@@ -1,0 +1,19 @@
+= simple_form_for(@terminal_master) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :carrier
+    = f.association :maker
+    = f.association :series
+    = f.association :model
+    = f.association :default_os
+    = f.association :screen_inch
+    = f.association :screen_width
+    = f.association :screen_height
+    = f.association :screen_density
+    = f.input :release_date
+    = f.input :tablet
+    = f.input :nfc
+
+  .form-actions
+    = f.button :submit

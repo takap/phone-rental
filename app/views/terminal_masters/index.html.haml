@@ -1,0 +1,41 @@
+%h1 Listing terminal_masters
+
+%table
+  %tr
+    %th Carrier
+    %th Maker
+    %th Series
+    %th Model
+    %th Default os
+    %th Screen inch
+    %th Screen width
+    %th Screen height
+    %th Screen density
+    %th Release date
+    %th Tablet
+    %th Nfc
+    %th
+    %th
+    %th
+
+  - @terminal_masters.each do |terminal_master|
+    %tr
+      %td= terminal_master.carrier
+      %td= terminal_master.maker
+      %td= terminal_master.series
+      %td= terminal_master.model
+      %td= terminal_master.default_os
+      %td= terminal_master.screen_inch
+      %td= terminal_master.screen_width
+      %td= terminal_master.screen_height
+      %td= terminal_master.screen_density
+      %td= terminal_master.release_date
+      %td= terminal_master.tablet
+      %td= terminal_master.nfc
+      %td= link_to 'Show', terminal_master
+      %td= link_to 'Edit', edit_terminal_master_path(terminal_master)
+      %td= link_to 'Destroy', terminal_master, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Terminal master', new_terminal_master_path

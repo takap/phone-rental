@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Version name:
+  = @operating_system.version_name
+%p
+  %b Version code:
+  = @operating_system.version_code
+
+= link_to 'Edit', edit_operating_system_path(@operating_system)
+\|
+= link_to 'Back', operating_systems_path

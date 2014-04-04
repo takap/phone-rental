@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @terminal.name
+%p
+  %b Terminal master:
+  = @terminal.terminal_master
+%p
+  %b Volume:
+  = @terminal.volume
+%p
+  %b Color:
+  = @terminal.color
+%p
+  %b Phone number:
+  = @terminal.phone_number
+%p
+  %b Updated os:
+  = @terminal.updated_os
+%p
+  %b Place:
+  = @terminal.place
+%p
+  %b Wifi:
+  = @terminal.wifi
+
+= link_to 'Edit', edit_terminal_path(@terminal)
+\|
+= link_to 'Back', terminals_path

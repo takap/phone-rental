@@ -1,0 +1,33 @@
+%h1 Listing terminals
+
+%table
+  %tr
+    %th Name
+    %th Terminal master
+    %th Volume
+    %th Color
+    %th Phone number
+    %th Updated os
+    %th Place
+    %th Wifi
+    %th
+    %th
+    %th
+
+  - @terminals.each do |terminal|
+    %tr
+      %td= terminal.name
+      %td= terminal.terminal_master
+      %td= terminal.volume
+      %td= terminal.color
+      %td= terminal.phone_number
+      %td= terminal.updated_os
+      %td= terminal.place
+      %td= terminal.wifi
+      %td= link_to 'Show', terminal
+      %td= link_to 'Edit', edit_terminal_path(terminal)
+      %td= link_to 'Destroy', terminal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Terminal', new_terminal_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @maker.name
+%p
+  %b Name kana:
+  = @maker.name_kana
+
+= link_to 'Edit', edit_maker_path(@maker)
+\|
+= link_to 'Back', makers_path

@@ -1,4 +1,30 @@
 Rails.application.routes.draw do
+  resources :terminals
+
+  resources :terminal_masters
+
+  resources :places
+
+  resources :colors
+
+  resources :screen_densities
+
+  resources :screen_heights
+
+  resources :screen_widths
+
+  resources :screen_inches
+
+  resources :operating_systems
+
+  resources :models
+
+  resources :series
+
+  resources :makers
+
+  resources :carriers
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

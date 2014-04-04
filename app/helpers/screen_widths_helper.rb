@@ -1,0 +1,2 @@
+module ScreenWidthsHelper
+end

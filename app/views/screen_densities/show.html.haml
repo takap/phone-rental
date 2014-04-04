@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Size:
+  = @screen_density.size
+
+= link_to 'Edit', edit_screen_density_path(@screen_density)
+\|
+= link_to 'Back', screen_densities_path

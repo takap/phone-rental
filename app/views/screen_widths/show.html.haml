@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Size:
+  = @screen_width.size
+
+= link_to 'Edit', edit_screen_width_path(@screen_width)
+\|
+= link_to 'Back', screen_widths_path

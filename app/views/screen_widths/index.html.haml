@@ -1,0 +1,19 @@
+%h1 Listing screen_widths
+
+%table
+  %tr
+    %th Size
+    %th
+    %th
+    %th
+
+  - @screen_widths.each do |screen_width|
+    %tr
+      %td= screen_width.size
+      %td= link_to 'Show', screen_width
+      %td= link_to 'Edit', edit_screen_width_path(screen_width)
+      %td= link_to 'Destroy', screen_width, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Screen width', new_screen_width_path

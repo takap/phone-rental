@@ -1,0 +1,21 @@
+%h1 Listing carriers
+
+%table
+  %tr
+    %th Name
+    %th Name kana
+    %th
+    %th
+    %th
+
+  - @carriers.each do |carrier|
+    %tr
+      %td= carrier.name
+      %td= carrier.name_kana
+      %td= link_to 'Show', carrier
+      %td= link_to 'Edit', edit_carrier_path(carrier)
+      %td= link_to 'Destroy', carrier, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Carrier', new_carrier_path

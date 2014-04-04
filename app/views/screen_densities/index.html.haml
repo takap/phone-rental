@@ -1,0 +1,19 @@
+%h1 Listing screen_densities
+
+%table
+  %tr
+    %th Size
+    %th
+    %th
+    %th
+
+  - @screen_densities.each do |screen_density|
+    %tr
+      %td= screen_density.size
+      %td= link_to 'Show', screen_density
+      %td= link_to 'Edit', edit_screen_density_path(screen_density)
+      %td= link_to 'Destroy', screen_density, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Screen density', new_screen_density_path

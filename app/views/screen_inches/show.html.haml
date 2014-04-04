@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Size:
+  = @screen_inch.size
+
+= link_to 'Edit', edit_screen_inch_path(@screen_inch)
+\|
+= link_to 'Back', screen_inches_path

@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Carrier:
+  = @terminal_master.carrier
+%p
+  %b Maker:
+  = @terminal_master.maker
+%p
+  %b Series:
+  = @terminal_master.series
+%p
+  %b Model:
+  = @terminal_master.model
+%p
+  %b Default os:
+  = @terminal_master.default_os
+%p
+  %b Screen inch:
+  = @terminal_master.screen_inch
+%p
+  %b Screen width:
+  = @terminal_master.screen_width
+%p
+  %b Screen height:
+  = @terminal_master.screen_height
+%p
+  %b Screen density:
+  = @terminal_master.screen_density
+%p
+  %b Release date:
+  = @terminal_master.release_date
+%p
+  %b Tablet:
+  = @terminal_master.tablet
+%p
+  %b Nfc:
+  = @terminal_master.nfc
+
+= link_to 'Edit', edit_terminal_master_path(@terminal_master)
+\|
+= link_to 'Back', terminal_masters_path

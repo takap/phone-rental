@@ -1,0 +1,21 @@
+%h1 Listing makers
+
+%table
+  %tr
+    %th Name
+    %th Name kana
+    %th
+    %th
+    %th
+
+  - @makers.each do |maker|
+    %tr
+      %td= maker.name
+      %td= maker.name_kana
+      %td= link_to 'Show', maker
+      %td= link_to 'Edit', edit_maker_path(maker)
+      %td= link_to 'Destroy', maker, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Maker', new_maker_path
