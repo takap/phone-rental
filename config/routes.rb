@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'terminals#index'
+
   devise_for :admin_users
   resources :terminals
 
