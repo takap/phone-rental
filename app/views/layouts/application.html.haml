@@ -32,11 +32,12 @@
               %li
                 %a{href: ""}=current_admin_user.email
               %li
-                = link_to 'Edit profile', edit_admin_user_registration_path, :class => 'navbar-link'
+                = link_to t('view.edit_profile'), edit_admin_user_registration_path, :class => 'navbar-link'
               %li
-                = link_to 'Logout', destroy_admin_user_session_path, method: :delete, :class => 'navbar-link'
+                = link_to t('view.logout'), destroy_admin_user_session_path, method: :delete, :class => 'navbar-link'
     .container
       = bootstrap_flash
       = yield
       %footer
-        %p &copy; Company 2014
+        .center-horizontal
+          %p=t('view.footer', service_name: t('view.service_name'))

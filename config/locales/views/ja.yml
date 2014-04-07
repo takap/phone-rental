@@ -1,0 +1,23 @@
+ja:
+  view:
+    # header
+    service_name: 端末貸出
+    edit_profile: プロフィール編集
+    logout: ログアウト
+
+    # footer
+    footer: "%{service_name} by サ開20%ルール"
+
+    # login
+    login: ログイン
+    admin_login: 管理者ログイン
+    remember_me: 保存する
+    signup: 管理者登録
+    forget_password: パスワードを忘れた場合はこちら
+
+  terminal_masters:
+    index:
+     title: 端末マスタ
+  terminals:
+    index:
+     title: 端末

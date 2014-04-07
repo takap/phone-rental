@@ -1,0 +1,71 @@
+ja:
+  activerecord:
+    attributes:
+      models:
+        carrier: キャリア
+        maker: メーカ
+        series: シリーズ
+        model: モデル
+        operating_system: OS
+        screen_inch: 画面インチ
+        screen_width: 画面幅
+        screen_height: 画面高さ
+        screen_density: 画面密度
+        color: 色
+        place: 場所
+        terminal: 端末
+        terminal_master: 端末マスタ
+      carrier:
+        name: 名前
+        name_kana: かな
+      maker:
+        name: 名前
+        name_kana: かな
+      series:
+        name: 名前
+        name_kana: かな
+      model:
+        name: 名前
+        name_kana: かな
+      operating_system:
+        version_name: バージョン名
+        version_code: バージョンコード
+      screen_inch:
+        size: インチ
+      screen_width:
+        size: 幅
+      screen_height:
+        size: 高さ
+      screen_density:
+        size: 画面密度
+      color:
+        name: 色
+        hex: 色(16進数)
+      place:
+        name: 場所名
+      terminal_master:
+        id: ID
+        carrier_id: キャリア
+        maker_id: メーカ
+        series_id: シリーズ
+        model_id: モデル
+        default_os_id: 初期OS
+        screen_inch_id: 画面インチ
+        screen_width_id: 画面幅
+        screen_height_id: 画面高さ
+        screen_density_id: 画面密度
+        release_date: 発売日
+        tablet: タブレット
+        nfc: NFC
+        created_at: 作成日
+      terminal:
+        id: ID
+        name: 名称
+        terminal_master_id: 端末マスタ
+        volume: 番号
+        color_id: 色
+        phone_number: 電話番号
+        updated_os_id: OS
+        place_id: 場所
+        wifi: Wi-Fi
+        created_at: 作成日
