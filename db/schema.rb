@@ -61,7 +61,8 @@ ActiveRecord::Schema.define(version: 20140404072217) do
 
   create_table "operating_systems", force: true do |t|
     t.string   "version_name"
-    t.integer  "version_code"
+    t.integer  "api_level"
+    t.string   "code_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

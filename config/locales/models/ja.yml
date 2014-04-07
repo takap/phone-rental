@@ -29,7 +29,8 @@ ja:
         name_kana: かな
       operating_system:
         version_name: バージョン名
-        version_code: バージョンコード
+        api_level: APIレベル
+        code_name: コードネーム
       screen_inch:
         size: インチ
       screen_width:
