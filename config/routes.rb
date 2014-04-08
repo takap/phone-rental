@@ -12,15 +12,7 @@ Rails.application.routes.draw do
 
   resources :screen_densities
 
-  resources :screen_heights
-
-  resources :screen_widths
-
-  resources :screen_inches
-
   resources :operating_systems
-
-  resources :models
 
   resources :series
 

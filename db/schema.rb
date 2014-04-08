@@ -52,13 +52,6 @@ ActiveRecord::Schema.define(version: 20140404072217) do
     t.datetime "updated_at"
   end
 
-  create_table "models", force: true do |t|
-    t.string   "name"
-    t.string   "name_kana"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "operating_systems", force: true do |t|
     t.string   "version_name"
     t.integer  "api_level"
@@ -79,24 +72,6 @@ ActiveRecord::Schema.define(version: 20140404072217) do
     t.datetime "updated_at"
   end
 
-  create_table "screen_heights", force: true do |t|
-    t.integer  "size"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "screen_inches", force: true do |t|
-    t.float    "size"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "screen_widths", force: true do |t|
-    t.integer  "size"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "series", force: true do |t|
     t.string   "name"
     t.string   "name_kana"
@@ -108,11 +83,11 @@ ActiveRecord::Schema.define(version: 20140404072217) do
     t.integer  "carrier_id"
     t.integer  "maker_id"
     t.integer  "series_id"
-    t.integer  "model_id"
+    t.string   "model_name"
     t.integer  "default_os_id"
-    t.integer  "screen_inch_id"
-    t.integer  "screen_width_id"
-    t.integer  "screen_height_id"
+    t.float    "screen_inch"
+    t.integer  "screen_width"
+    t.integer  "screen_height"
     t.integer  "screen_density_id"
     t.date     "release_date"
     t.integer  "tablet"
@@ -124,11 +99,7 @@ ActiveRecord::Schema.define(version: 20140404072217) do
   add_index "terminal_masters", ["carrier_id"], name: "index_terminal_masters_on_carrier_id", using: :btree
   add_index "terminal_masters", ["default_os_id"], name: "index_terminal_masters_on_default_os_id", using: :btree
   add_index "terminal_masters", ["maker_id"], name: "index_terminal_masters_on_maker_id", using: :btree
-  add_index "terminal_masters", ["model_id"], name: "index_terminal_masters_on_model_id", using: :btree
   add_index "terminal_masters", ["screen_density_id"], name: "index_terminal_masters_on_screen_density_id", using: :btree
-  add_index "terminal_masters", ["screen_height_id"], name: "index_terminal_masters_on_screen_height_id", using: :btree
-  add_index "terminal_masters", ["screen_inch_id"], name: "index_terminal_masters_on_screen_inch_id", using: :btree
-  add_index "terminal_masters", ["screen_width_id"], name: "index_terminal_masters_on_screen_width_id", using: :btree
   add_index "terminal_masters", ["series_id"], name: "index_terminal_masters_on_series_id", using: :btree
 
   create_table "terminals", force: true do |t|

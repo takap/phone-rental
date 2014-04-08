@@ -49,11 +49,11 @@ ja:
         carrier_id: キャリア
         maker_id: メーカ
         series_id: シリーズ
-        model_id: モデル
+        model_name: モデル
         default_os_id: 初期OS
-        screen_inch_id: 画面インチ
-        screen_width_id: 画面幅
-        screen_height_id: 画面高さ
+        screen_inch: 画面インチ
+        screen_width: 画面幅
+        screen_height: 画面高さ
         screen_density_id: 画面密度
         release_date: 発売日
         tablet: タブレット

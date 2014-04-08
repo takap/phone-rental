@@ -4,11 +4,11 @@ class CreateTerminalMasters < ActiveRecord::Migration
       t.references :carrier, index: true
       t.references :maker, index: true
       t.references :series, index: true
-      t.references :model, index: true
+      t.string :model_name
       t.references :default_os, index: true
-      t.references :screen_inch, index: true
-      t.references :screen_width, index: true
-      t.references :screen_height, index: true
+      t.float :screen_inch
+      t.integer :screen_width
+      t.integer :screen_height
       t.references :screen_density, index: true
       t.date :release_date
       t.integer :tablet
