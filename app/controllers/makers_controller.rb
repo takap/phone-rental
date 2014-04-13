@@ -1,5 +1,6 @@
 class MakersController < ApplicationController
   before_action :set_maker, only: [:show, :edit, :update, :destroy]
+  authorize_actions_for User
 
   # GET /makers
   # GET /makers.json

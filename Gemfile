@@ -53,8 +53,10 @@ gem 'simple_form'
 # Twitter bootstrap
 gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
 
-# Use devise
+# authentication authorization
 gem 'devise'
+gem 'authority'
+gem 'rolify'
 
 # Google Analytics
 gem 'google-analytics-rails'

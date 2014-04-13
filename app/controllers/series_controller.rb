@@ -1,5 +1,6 @@
 class SeriesController < ApplicationController
   before_action :set_series, only: [:show, :edit, :update, :destroy]
+  authorize_actions_for User
 
   # GET /series
   # GET /series.json

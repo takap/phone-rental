@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'terminals#index'
 
-  devise_for :admin_users
   resources :terminals
 
   resources :terminal_masters

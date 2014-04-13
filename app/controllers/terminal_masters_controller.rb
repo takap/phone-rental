@@ -1,5 +1,6 @@
 class TerminalMastersController < ApplicationController
   before_action :set_terminal_master, only: [:show, :edit, :update, :destroy]
+  authorize_actions_for User
 
   # GET /terminal_masters
   # GET /terminal_masters.json

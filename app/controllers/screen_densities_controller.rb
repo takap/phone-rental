@@ -1,5 +1,6 @@
 class ScreenDensitiesController < ApplicationController
   before_action :set_screen_density, only: [:show, :edit, :update, :destroy]
+  authorize_actions_for User
 
   # GET /screen_densities
   # GET /screen_densities.json

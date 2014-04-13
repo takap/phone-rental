@@ -1,5 +1,6 @@
 class OperatingSystemsController < ApplicationController
   before_action :set_operating_system, only: [:show, :edit, :update, :destroy]
+  authorize_actions_for User
 
   # GET /operating_systems
   # GET /operating_systems.json

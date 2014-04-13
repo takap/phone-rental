@@ -1,5 +1,6 @@
 class TerminalsController < ApplicationController
   before_action :set_terminal, only: [:show, :edit, :update, :destroy]
+  authorize_actions_for User
 
   # GET /terminals
   # GET /terminals.json

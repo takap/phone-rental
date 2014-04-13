@@ -1,5 +1,6 @@
 class CarriersController < ApplicationController
   before_action :set_carrier, only: [:show, :edit, :update, :destroy]
+  authorize_actions_for User
 
   # GET /carriers
   # GET /carriers.json
