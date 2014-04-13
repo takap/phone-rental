@@ -15,6 +15,9 @@ ja:
     signup: 管理者登録
     forget_password: パスワードを忘れた場合はこちら
 
+    # check
+    new_check: 貸出申込を行う
+
   terminal_masters:
     index:
      title: 端末マスタ

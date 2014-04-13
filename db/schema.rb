@@ -11,25 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409095417) do
-
-  create_table "admin_users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+ActiveRecord::Schema.define(version: 20140413032013) do
 
   create_table "carriers", force: true do |t|
     t.string   "name"
@@ -37,6 +19,35 @@ ActiveRecord::Schema.define(version: 20140409095417) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "check_events", force: true do |t|
+    t.integer  "terminal_id"
+    t.integer  "user_id"
+    t.integer  "operator_id"
+    t.string   "operation"
+    t.integer  "take_out"
+    t.string   "note"
+    t.date     "due_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "check_events", ["operator_id"], name: "index_check_events_on_operator_id", using: :btree
+  add_index "check_events", ["terminal_id"], name: "index_check_events_on_terminal_id", using: :btree
+  add_index "check_events", ["user_id"], name: "index_check_events_on_user_id", using: :btree
+
+  create_table "check_states", force: true do |t|
+    t.integer  "terminal_id"
+    t.integer  "user_id"
+    t.integer  "take_out"
+    t.string   "note"
+    t.date     "due_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "check_states", ["terminal_id"], name: "index_check_states_on_terminal_id", using: :btree
+  add_index "check_states", ["user_id"], name: "index_check_states_on_user_id", using: :btree
 
   create_table "colors", force: true do |t|
     t.string   "name"

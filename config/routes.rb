@@ -20,6 +20,11 @@ Rails.application.routes.draw do
 
   resources :carriers
 
+  get 'checks/new'
+  post 'checks/create' => 'checks#create'
+  get 'checks/:id' => 'checks#show'
+  post 'checks/update' => 'checks#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
