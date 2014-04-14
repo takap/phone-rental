@@ -101,3 +101,9 @@ CSV.foreach('db/seeds/terminal_masters.csv') do |row|
   )
 end
 
+CSV.foreach('db/seeds/divisions.csv') do |row|
+  Division.create(
+      id: row[0],
+      name: row[1],
+  )
+end

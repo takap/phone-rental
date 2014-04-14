@@ -43,3 +43,6 @@ config/initializers/google_analytics.rb
 config/settings.yml
 config/database.yml
 config/secrets.yml
+
+# Seeds files
+db/seeds/divisions.csv
