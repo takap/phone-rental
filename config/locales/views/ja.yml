@@ -8,11 +8,19 @@ ja:
     # footer
     footer: "%{service_name} by サ開20%ルール"
 
+    # devise general
+    devise_edit: プロフィール編集
+    devise_update: 更新
+    devise_password_hint: 変更しない場合は空欄のままで結構です。
+    devise_current_password_hint: 変更確認のため現在のパスワードを入力してください。
+    devise_reset_password: パスワード初期化メールを送信
+
+    # sign up
+    signup: ユーザ登録
+
     # login
     login: ログイン
-    admin_login: 管理者ログイン
     remember_me: 保存する
-    signup: 管理者登録
     forget_password: パスワードを忘れた場合はこちら
 
     # check
@@ -20,7 +28,12 @@ ja:
 
   terminal_masters:
     index:
-     title: 端末マスタ
+      title: 端末マスタ
   terminals:
     index:
-     title: 端末
+      title: 端末
+  checks:
+    index:
+      title: 貸出状況
+    new:
+      title: 貸出予約

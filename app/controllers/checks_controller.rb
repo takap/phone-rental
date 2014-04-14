@@ -1,6 +1,6 @@
 class ChecksController < ApplicationController
   def new
-    @check = Check.new
+    @check = Check.new terminal_id: params[:terminal_id]
   end
 
   def create

@@ -1,7 +1,7 @@
 .container
-  = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f|
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f|
     %h2.form-signin-heading
-      =t('view.admin_login')
+      =t('view.login')
     .form-inputs
       = f.email_field :email, autofocus: "", placeholder: "Email address", required: false, autofocus: true, class: 'form-control'
       = f.password_field :password, placeholder: "Password", required: false, class: 'form-control'

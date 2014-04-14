@@ -15,6 +15,7 @@ ja:
         place: 場所
         terminal: 端末
         terminal_master: 端末マスタ
+        user: ユーザ
       carrier:
         name: 名前
         name_kana: かな
@@ -70,3 +71,19 @@ ja:
         place_id: 場所
         wifi: Wi-Fi
         created_at: 作成日
+      user:
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        current_password: 現在のパスワード
+  activemodel:
+    attributes:
+      check:
+        id: ID
+        terminal_id: 端末ID
+        user_id: ユーザID
+        take_out: 持ち出しあり
+        note: 備考
+        due_date: 返却予定日
+        created_at: 作成日
+        updated_at: 更新日

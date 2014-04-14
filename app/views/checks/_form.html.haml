@@ -1,7 +1,16 @@
 = simple_form_for @check, url: {action: :create}, html: { class: 'form-horizontal' } do |f|
-  = f.input :terminal_id
-  = f.input :take_out
+  = f.hidden_field :terminal_id
+  .form-group
+    %label.col-sm-2.control-label
+      = tt('Check.due_date')
+    .col-sm-10
+      = f.date_select :due_date, {}, {class: 'form-control form-control-inline'}
+  .form-group
+    %label.col-sm-offset-2.col-sm-10
+      = f.check_box :take_out
+      = tt('Check.take_out')
   = f.input :note
-  = f.input :due_date
-  = f.button :submit, :class => 'btn-primary'
-  = link_to t('.cancel', :default => t("helpers.links.cancel")), checks_create_path, :class => 'btn btn-default'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.button :submit, :class => 'btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), checks_create_path, :class => 'btn btn-default'

@@ -3,6 +3,7 @@ class CreateCheckStates < ActiveRecord::Migration
     create_table :check_states do |t|
       t.references :terminal, index: true
       t.references :user, index: true
+      t.string :operation
       t.integer :take_out
       t.string :note
       t.date :due_date
