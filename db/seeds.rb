@@ -24,8 +24,8 @@ CSV.foreach('db/seeds/makers.csv') do |row|
   )
 end
 
-CSV.foreach('db/seeds/series.csv') do |row|
-  Series.create(
+CSV.foreach('db/seeds/groups.csv') do |row|
+  Group.create(
       id: row[0],
       name: row[1],
       name_kana: row[2],
@@ -86,7 +86,7 @@ CSV.foreach('db/seeds/terminal_masters.csv') do |row|
       id: row[0],
       carrier_id: row[1],
       maker_id: row[2],
-      series_id: row[3],
+      group_id: row[3],
       model_name: row[4],
       default_os_id: row[5],
       screen_inch: row[6],

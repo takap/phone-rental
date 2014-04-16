@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :groups
+
   devise_for :users
   root to: 'dashboard#index'
 
@@ -22,8 +24,6 @@ Rails.application.routes.draw do
   resources :screen_densities
 
   resources :operating_systems
-
-  resources :series
 
   resources :makers
 

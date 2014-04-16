@@ -26,14 +26,93 @@ ja:
     # check
     new_check: 貸出申込を行う
 
+  carriers:
+    index:
+      title: キャリア
+    show:
+      title: キャリア詳細
+    new:
+      title: 新規キャリア登録
+    edit:
+      title: キャリア編集
+  makers:
+    index:
+      title: メーカー
+    show:
+      title: メーカー詳細
+    new:
+      title: 新規メーカー登録
+    edit:
+      title: メーカー編集
+  groups:
+    index:
+      title: グループ
+    show:
+      title: グループ詳細
+    new:
+      title: 新規グループ登録
+    edit:
+      title: グループ編集
+  operating_systems:
+    index:
+      title: OS
+    show:
+      title: OS詳細
+    new:
+      title: 新規OS登録
+    edit:
+      title: OS編集
+  screen_densities:
+    index:
+      title: 画面密度
+    show:
+      title: 画面密度詳細
+    new:
+      title: 新規画面密度登録
+    edit:
+      title: 画面密度編集
+  colors:
+    index:
+      title: 色
+    show:
+      title: 色詳細
+    new:
+      title: 新規色登録
+    edit:
+      title: 色編集
+  places:
+    index:
+      title: 場所
+    show:
+      title: 場所詳細
+    new:
+      title: 新規場所登録
+    edit:
+      title: 場所編集
   terminal_masters:
     index:
       title: 端末マスタ
+    show:
+      title: 端末マスタ詳細
+    new:
+      title: 新規端末マスタ登録
+    edit:
+      title: 端末マスタ編集
   terminals:
     index:
       title: 端末
+    show:
+      title: 端末
+    new:
+      title: 新規端末登録
+    edit:
+      title: 端末編集
   checks:
     index:
       title: 貸出状況
+    show:
+      title: 貸出状況
     new:
-      title: 貸出予約
+      title: 新規貸出登録
+    edit:
+      title: 貸出編集

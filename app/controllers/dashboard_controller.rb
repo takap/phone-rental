@@ -11,5 +11,6 @@ class DashboardController < ApplicationController
   end
 
   def client
+    @checks = CheckState.where(user_id: current_user.id)
   end
 end

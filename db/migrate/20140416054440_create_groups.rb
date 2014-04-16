@@ -1,6 +1,6 @@
-class CreateSeries < ActiveRecord::Migration
+class CreateGroups < ActiveRecord::Migration
   def change
-    create_table :series do |t|
+    create_table :groups do |t|
       t.string :name
       t.string :name_kana
 

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "series/show" do
+describe "groups/show" do
   before(:each) do
-    @series = assign(:series, stub_model(Series,
+    @group = assign(:group, stub_model(Group,
       :name => "Name",
       :name_kana => "Name Kana"
     ))

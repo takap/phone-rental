@@ -4,7 +4,7 @@ ja:
       models:
         carrier: キャリア
         maker: メーカ
-        series: シリーズ
+        group: シリーズ
         model: モデル
         operating_system: OS
         screen_inch: 画面インチ
@@ -22,10 +22,7 @@ ja:
       maker:
         name: 名前
         name_kana: かな
-      series:
-        name: 名前
-        name_kana: かな
-      model:
+      group:
         name: 名前
         name_kana: かな
       operating_system:
