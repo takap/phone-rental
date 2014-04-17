@@ -1,2 +1,28 @@
-%h1 Dashboard#client
-%p Find me in app/views/dashboard/client.html.haml
+%h1= t('.title')
+%h2.header= t('view.check_status')
+- if @checks.empty?
+  .jumbotron
+    = t('view.check_empty_message')
+- else
+  %table.table.table-hover
+    %thead
+      %tr
+        %th= tt('CheckOnDashboard.status')
+        %th= tt('CheckOnDashboard.terminal_name')
+        %th= tt('CheckOnDashboard.carrier_name')
+        %th= tt('CheckOnDashboard.maker_name')
+        %th= tt('CheckOnDashboard.model_name')
+        %th= tt('CheckOnDashboard.due_date')
+        %th= tt('CheckOnDashboard.check_created_at')
+        %th= tt('CheckOnDashboard.check_updated_at')
+    %tbody
+      - @checks.each do |check|
+        %tr{check_id: "#{check.check_id}"}
+          %td= check.status_view
+          %td= check.terminal_name
+          %td= check.carrier_name
+          %td= check.maker_name
+          %td= check.model_name
+          %td.hidden-xs= check.due_date
+          %td.hidden-xs= check.check_created_at
+          %td.hidden-xs= check.check_updated_at

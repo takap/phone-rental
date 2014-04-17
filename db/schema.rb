@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140416054440) do
     t.integer  "terminal_id"
     t.integer  "user_id"
     t.integer  "operator_id"
-    t.string   "operation"
+    t.string   "status"
     t.integer  "take_out"
     t.string   "note"
     t.date     "due_date"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140416054440) do
   create_table "check_states", force: true do |t|
     t.integer  "terminal_id"
     t.integer  "user_id"
-    t.string   "operation"
+    t.string   "status"
     t.integer  "take_out"
     t.string   "note"
     t.date     "due_date"

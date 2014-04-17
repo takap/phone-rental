@@ -46,7 +46,7 @@ ja:
         id: ID
         carrier_id: キャリア
         maker_id: メーカ
-        series_id: シリーズ
+        group_id: シリーズ
         model_name: モデル
         default_os_id: 初期OS
         screen_inch: 画面インチ
@@ -88,3 +88,14 @@ ja:
         due_date: 返却予定日
         created_at: 作成日
         updated_at: 更新日
+      check_on_dashboard:
+        check_id: ID
+        terminal_name: 端末記号
+        status: 状態
+        carrier_name: キャリア
+        maker_name: メーカ
+        group_name: シリーズ
+        model_name: モデル
+        due_date: 返却予定日
+        check_created_at: 申込日
+        check_updated_at: 状態更新日

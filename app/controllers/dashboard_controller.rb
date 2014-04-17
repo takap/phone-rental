@@ -11,6 +11,7 @@ class DashboardController < ApplicationController
   end
 
   def client
-    @checks = CheckState.where(user_id: current_user.id)
+    repo = ChecksRepository.new
+    @checks = repo.get_checks_on_dashboard_by_user_id current_user.id
   end
 end

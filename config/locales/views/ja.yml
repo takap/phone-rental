@@ -23,8 +23,20 @@ ja:
     remember_me: 保存する
     forget_password: パスワードを忘れた場合はこちら
 
+    # dashboard
+    check_status: 貸出状況
+    check_empty_message: 貸出中の端末はありません。
+
     # check
     new_check: 貸出申込を行う
+    available: 利用可能
+    reserved: 予約済
+    ready: 準備完了
+    unavailable: 貸出中
+    unavailable_overdue: 延滞中
+    owed_by_current_user: 貸出中
+    owed_by_current_user_overdue: 延滞中
+
 
   carriers:
     index:
@@ -116,3 +128,8 @@ ja:
       title: 新規貸出登録
     edit:
       title: 貸出編集
+  dashboard:
+    admin:
+      title: ダッシュボード
+    client:
+      title: ダッシュボード

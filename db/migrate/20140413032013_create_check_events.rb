@@ -4,7 +4,7 @@ class CreateCheckEvents < ActiveRecord::Migration
       t.references :terminal, index: true
       t.references :user, index: true
       t.references :operator, index: true
-      t.string :operation
+      t.string :status
       t.integer :take_out
       t.string :note
       t.date :due_date

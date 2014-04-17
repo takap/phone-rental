@@ -6,6 +6,7 @@ class ChecksController < ApplicationController
   def create
     repo = ChecksRepository.new
     repo.create(current_user.id, check_params)
+    redirect_to '/'
   end
 
   def show
