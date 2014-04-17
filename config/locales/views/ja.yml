@@ -26,6 +26,7 @@ ja:
     # dashboard
     check_status: 貸出状況
     check_empty_message: 貸出中の端末はありません。
+    user_name: 氏名
 
     # check
     new_check: 貸出申込を行う

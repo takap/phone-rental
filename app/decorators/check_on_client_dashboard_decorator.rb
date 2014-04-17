@@ -1,0 +1,3 @@
+module CheckOnClientDashboardDecorator
+  include CheckBaseDecorator
+end

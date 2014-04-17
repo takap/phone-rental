@@ -1,0 +1,3 @@
+module CheckOnAdminDashboardDecorator
+  include CheckBaseDecorator
+end

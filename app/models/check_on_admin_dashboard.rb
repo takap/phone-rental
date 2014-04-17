@@ -1,4 +1,4 @@
-class CheckOnDashboard
+class CheckOnAdminDashboard
   include ActiveModel::Model
   attr_accessor :check_id,
                 :user_id,
@@ -6,17 +6,20 @@ class CheckOnDashboard
                 :maker_id,
                 :group_id,
                 :place_id,
+                :last_name,
+                :first_name,
+                :division_name,
                 :terminal_name,
                 :terminal_id,
                 :status,
                 :take_out,
                 :note,
-                :due_date,
                 :carrier_name,
                 :maker_name,
                 :group_name,
                 :model_name,
                 :volume,
+                :due_date,
                 :check_created_at,
                 :check_updated_at,
                 :color_id,

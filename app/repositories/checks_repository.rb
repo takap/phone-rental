@@ -26,12 +26,38 @@ class ChecksRepository
     )
   end
 
-  def get_checks_on_dashboard_by_user_id(user_id)
-    checks = CheckState.find_detail_all_by_user_id user_id
+  def get_checks_on_client_dashboard_by_user_id(user_id)
+    checks = CheckState.find_detail_by_user_id user_id
     check_entities = []
     checks.each do |check|
-      check_entity = CheckOnDashboard.new(
+      check_entity = CheckOnClientDashboard.new(
           check_id: check['check_id'],
+          terminal_name: check['terminal_name'],
+          status: check_status(check),
+          take_out: check['take_out'],
+          carrier_name: check['carrier_name'],
+          maker_name: check['maker_name'],
+          group_name: check['group_name'],
+          model_name: check['model_name'],
+          volume: check['volume'],
+          due_date: format_date(check['due_date']),
+          check_created_at: format_datetime(check['check_created_at']),
+          check_updated_at: format_datetime(check['check_updated_at']),
+      )
+      check_entities << check_entity
+    end
+    check_entities
+  end
+
+  def get_all_checks_on_admin_dashboard
+    checks = CheckState.find_detail_all
+    check_entities = []
+    checks.each do |check|
+      check_entity = CheckOnAdminDashboard.new(
+          check_id: check['check_id'],
+          last_name: check['last_name'],
+          first_name: check['first_name'],
+          division_name: check['division_name'],
           terminal_name: check['terminal_name'],
           status: check_status(check),
           take_out: check['take_out'],

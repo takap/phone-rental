@@ -88,9 +88,21 @@ ja:
         due_date: 返却予定日
         created_at: 作成日
         updated_at: 更新日
-      check_on_dashboard:
+      check_on_client_dashboard:
         check_id: ID
         terminal_name: 端末記号
+        status: 状態
+        carrier_name: キャリア
+        maker_name: メーカ
+        group_name: シリーズ
+        model_name: モデル
+        due_date: 返却予定日
+        check_created_at: 申込日
+        check_updated_at: 状態更新日
+      check_on_admin_dashboard:
+        check_id: ID
+        terminal_name: 端末記号
+        division_name: 部署名
         status: 状態
         carrier_name: キャリア
         maker_name: メーカ

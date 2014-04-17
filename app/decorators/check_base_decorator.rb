@@ -1,4 +1,4 @@
-module CheckOnDashboardDecorator
+module CheckBaseDecorator
   def status_view
     case status
       when CHECK_STATUS_DOMAIN.AVAILABLE
