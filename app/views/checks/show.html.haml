@@ -1,4 +1,125 @@
 - model_class = Check
 .page-header
   %h1=t '.title', :default => [:'helpers.titles.show', 'New %{model}'], :model => model_class.model_name.human.titleize
-= render :partial => "form"
+
+.row
+  .col-sm-4
+    .header
+      %h2=t 'view.user_header'
+    .form-horizontal
+      .form-group
+        %label.col-sm-4.control-label
+          = t('view.user_name')
+        .col-sm-8
+          %p.form-control-static= "#{@user.last_name} #{@user.first_name}"
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('User.phone_number')
+        .col-sm-8
+          %p.form-control-static= @user.phone_number
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('User.division_id')
+        .col-sm-8
+          %p.form-control-static= @user.division.name
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('User.email')
+        .col-sm-8
+          %p.form-control-static= @user.email
+  .col-sm-4
+    .header
+      %h2=t 'view.check_header'
+    = simple_form_for @check, url: {action: :update}, html: { class: 'form-horizontal' } do |f|
+      = f.hidden_field :terminal_id
+      = f.hidden_field :note
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Check.id')
+        .col-sm-8
+          %p.form-control-static= @check.id
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Check.status')
+        .col-sm-8
+          %p.form-control-static.btn{class: @check.status_class}= @check.status_view
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Check.created_at')
+        .col-sm-8
+          %p.form-control-static= @check.created_at
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Check.updated_at')
+        .col-sm-8
+          %p.form-control-static= @check.updated_at
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Check.due_date')
+        .col-sm-8
+          %p.form-control-static= @check.due_date
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Check.take_out')
+        .col-sm-8
+          %p.form-control-static= @check.take_out_view
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Check.note')
+        .col-sm-8
+          %p.form-control-static= @check.note
+      .form-group
+        .col-sm-8
+          = f.button :submit, value: @check.submit_button_value, class: @check.next_status_class
+          = link_to t('.cancel', :default => t("helpers.links.cancel")), checks_create_path, :class => 'btn btn-default'
+  .col-sm-4
+    .header
+      %h2=t 'view.terminal_header'
+    .form-horizontal
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Terminal.name')
+        .col-sm-8
+          %p.form-control-static= @terminal.name
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('TerminalMaster.model_name')
+        .col-sm-8
+          %p.form-control-static= @terminal.terminal_master.model_name
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Terminal.phone_number')
+        .col-sm-8
+          %p.form-control-static= @terminal.phone_number
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Place.name')
+        .col-sm-8
+          %p.form-control-static= @terminal.place.name
+      .form-group
+        %label.col-sm-4.control-label
+          = tt('Color.name')
+        .col-sm-8
+          %p.form-control-static= @terminal.color.name
+.row
+  .highlight
+    .header
+      %h3=t 'view.check_flow'
+    .flow
+      %button.btn.btn-success= t('view.available')
+      >
+      %button.btn.btn-default= t('view.apply_check')
+      >
+      %button.btn.btn-primary= t('view.reserved')
+      >
+      %button.btn.btn-default= t('view.prepare_terminal')
+      >
+      %button.btn.btn-info= t('view.ready')
+      >
+      %button.btn.btn-default= t('view.check_out_terminal')
+      >
+      %button.btn.btn-warning= t('view.unavailable')
+      >
+      %button.btn.btn-default= t('view.check_in_terminal')
+      >
+      %button.btn.btn-success= t('view.available')

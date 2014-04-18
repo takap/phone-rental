@@ -9,7 +9,9 @@ class DashboardController < ApplicationController
 
   def admin
     repo = ChecksRepository.new
-    @checks = repo.get_all_checks_on_admin_dashboard
+    @reserved_checks = repo.get_reserved_checks_on_admin_dashboard
+    @ready_checks = repo.get_ready_checks_on_admin_dashboard
+    @unavailable_checks = repo.get_unavailable_checks_on_admin_dashboard
   end
 
   def client

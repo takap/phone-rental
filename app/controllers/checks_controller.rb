@@ -10,9 +10,16 @@ class ChecksController < ApplicationController
   end
 
   def show
+    repo = ChecksRepository.new
+    @check = repo.get_check_by_check_id(params[:id])
+    @user = User.where(id: @check.user_id).first
+    @terminal = Terminal.where(id: @check.terminal_id).first
   end
 
   def update
+    repo = ChecksRepository.new
+    repo.update(current_user.id, check_params)
+    redirect_to '/'
   end
 
   private

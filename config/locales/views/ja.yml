@@ -1,9 +1,14 @@
 ja:
   view:
-    # header
+    # navbar
     service_name: 端末貸出
     edit_profile: プロフィール編集
     logout: ログアウト
+
+    # header
+    user_header: ユーザ情報
+    terminal_header: 端末情報
+    check_header: 貸出情報
 
     # footer
     footer: "%{service_name} by サ開20%ルール"
@@ -24,20 +29,31 @@ ja:
     forget_password: パスワードを忘れた場合はこちら
 
     # dashboard
-    check_status: 貸出状況
-    check_empty_message: 貸出中の端末はありません。
+    reserved_terminals: 準備する端末
+    ready_terminals: 準備済の端末
+    unavailable_terminals: 貸出中の端末
+    check_empty_message: 該当する端末はありません。
     user_name: 氏名
 
     # check
     new_check: 貸出申込を行う
     available: 利用可能
     reserved: 予約済
-    ready: 準備完了
+    ready: 準備済
     unavailable: 貸出中
     unavailable_overdue: 延滞中
     owed_by_current_user: 貸出中
     owed_by_current_user_overdue: 延滞中
+    apply_check: ユーザ申し込み
+    prepare_terminal: 端末準備
+    check_out_terminal: 端末貸出
+    check_in_terminal: 端末返却
+    take_out_true: あり
+    take_out_false: なし
+    check_flow: 貸出フロー
 
+    # button
+    edit: 編集
 
   carriers:
     index:
@@ -122,9 +138,9 @@ ja:
       title: 端末編集
   checks:
     index:
-      title: 貸出状況
+      title: 貸出一覧
     show:
-      title: 貸出状況
+      title: 貸出状態
     new:
       title: 新規貸出登録
     edit:

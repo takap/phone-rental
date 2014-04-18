@@ -1,0 +1,31 @@
+.header
+  %h2= header
+- if checks.empty?
+  .jumbotron
+    = t('view.check_empty_message')
+- else
+  %table.table.table-hover
+    %thead
+      %tr
+        %th= tt('CheckOnAdminDashboard.status')
+        %th= tt('CheckOnAdminDashboard.terminal_name')
+        %th= t('view.user_name')
+        %th= tt('CheckOnAdminDashboard.division_name')
+        %th= tt('CheckOnAdminDashboard.model_name')
+        %th= tt('CheckOnAdminDashboard.check_created_at')
+        %th= tt('CheckOnAdminDashboard.check_updated_at')
+        %th= tt('CheckOnAdminDashboard.due_date')
+        %th
+    %tbody
+      - checks.each do |check|
+        %tr{check_id: "#{check.check_id}"}
+          %td
+            .btn{class: check.status_class}= check.status_view
+          %td= check.terminal_name
+          %td= "#{check.last_name} #{check.first_name}"
+          %td= check.division_name
+          %td= check.model_name
+          %td= check.check_created_at
+          %td= check.check_updated_at
+          %td= check.due_date
+          %td= link_to t('view.edit'), "/checks/#{check.check_id}", {class: 'btn btn-success'}

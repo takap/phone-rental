@@ -1,5 +1,7 @@
-%h1= t('.title')
-%h2.header= t('view.check_status')
+.page-header
+  %h1= t('.title')
+.header
+  %h2= t('view.check_status')
 - if @checks.empty?
   .jumbotron
     = t('view.check_empty_message')
@@ -7,6 +9,7 @@
   %table.table.table-hover
     %thead
       %tr
+        %th= tt('CheckOnClientDashboard.check_id')
         %th= tt('CheckOnClientDashboard.status')
         %th= tt('CheckOnClientDashboard.terminal_name')
         %th= tt('CheckOnClientDashboard.carrier_name')
@@ -18,6 +21,7 @@
     %tbody
       - @checks.each do |check|
         %tr{check_id: "#{check.check_id}"}
+          %td= check.check_id
           %td= check.status_view
           %td= check.terminal_name
           %td= check.carrier_name

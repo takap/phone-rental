@@ -1,34 +1,5 @@
-%h1= t('.title')
-%h2.header= t('view.check_status')
-- if @checks.empty?
-  .jumbotron
-    = t('view.check_empty_message')
-- else
-  %table.table.table-hover
-    %thead
-      %tr
-        %th= tt('CheckOnAdminDashboard.status')
-        %th= tt('CheckOnAdminDashboard.terminal_name')
-        %th= t('view.user_name')
-        %th= tt('CheckOnAdminDashboard.division_name')
-        %th= tt('CheckOnAdminDashboard.carrier_name')
-        %th= tt('CheckOnAdminDashboard.maker_name')
-        %th= tt('CheckOnAdminDashboard.model_name')
-        %th= tt('CheckOnAdminDashboard.due_date')
-        %th= tt('CheckOnAdminDashboard.check_created_at')
-        %th= tt('CheckOnAdminDashboard.check_updated_at')
-        %th
-    %tbody
-      - @checks.each do |check|
-        %tr{check_id: "#{check.check_id}"}
-          %td= check.status_view
-          %td= check.terminal_name
-          %td= "#{check.last_name} #{check.first_name}"
-          %td= check.division_name
-          %td= check.carrier_name
-          %td= check.maker_name
-          %td= check.model_name
-          %td= check.due_date
-          %td= check.check_created_at
-          %td= check.check_updated_at
-          %td= link_to t('view.edit'), "/checks/#{check.check_id}/edit"
+.page-header
+  %h1= t('.title')
+= render 'dashboard/admin_terminals', checks:@reserved_checks, header: t('view.reserved_terminals')
+= render 'dashboard/admin_terminals', checks:@ready_checks, header: t('view.ready_terminals')
+= render 'dashboard/admin_terminals', checks:@unavailable_checks, header: t('view.unavailable_terminals')

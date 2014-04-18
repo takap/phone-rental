@@ -1,4 +1,12 @@
 ja:
+  base: &base
+    id: ID
+    created_at: 作成日
+    updated_at: 更新日
+  name: &name
+    name: 名前
+    name_kana: かな
+    <<: *base
   activerecord:
     attributes:
       models:
@@ -17,33 +25,37 @@ ja:
         terminal_master: 端末マスタ
         user: ユーザ
       carrier:
-        name: 名前
-        name_kana: かな
+        <<: *name
       maker:
-        name: 名前
-        name_kana: かな
+        <<: *name
       group:
-        name: 名前
-        name_kana: かな
+        <<: *name
       operating_system:
+        <<: *base
         version_name: バージョン名
         api_level: APIレベル
         code_name: コードネーム
       screen_inch:
+        <<: *base
         size: インチ
       screen_width:
+        <<: *base
         size: 幅
       screen_height:
+        <<: *base
         size: 高さ
       screen_density:
+        <<: *base
         size: 画面密度
       color:
+        <<: *base
         name: 色
         hex: 色(16進数)
       place:
-        name: 場所名
+        <<: *base
+        name: 場所
       terminal_master:
-        id: ID
+        <<: *base
         carrier_id: キャリア
         maker_id: メーカ
         group_id: シリーズ
@@ -56,9 +68,8 @@ ja:
         release_date: 発売日
         tablet: タブレット
         nfc: NFC
-        created_at: 作成日
       terminal:
-        id: ID
+        <<: *base
         name: 名称
         terminal_master_id: 端末マスタ
         volume: 番号
@@ -67,8 +78,8 @@ ja:
         updated_os_id: OS
         place_id: 場所
         wifi: Wi-Fi
-        created_at: 作成日
       user:
+        <<: *base
         last_name: 姓
         first_name: 名
         phone_number: 内線番号
@@ -77,17 +88,19 @@ ja:
         password: パスワード
         password_confirmation: パスワード確認
         current_password: 現在のパスワード
+      division:
+        <<: *base
+        name: 部門名
   activemodel:
     attributes:
       check:
-        id: ID
+        <<: *base
         terminal_id: 端末ID
         user_id: ユーザID
-        take_out: 持ち出しあり
+        take_out: 持ち出し
         note: 備考
+        status: 状態
         due_date: 返却予定日
-        created_at: 作成日
-        updated_at: 更新日
       check_on_client_dashboard:
         check_id: ID
         terminal_name: 端末記号

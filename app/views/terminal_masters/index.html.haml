@@ -7,7 +7,7 @@
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:carrier_id)
       %th= model_class.human_attribute_name(:maker_id)
-      %th= model_class.human_attribute_name(:series_id)
+      %th= model_class.human_attribute_name(:group_id)
       %th= model_class.human_attribute_name(:model_name)
       %th= model_class.human_attribute_name(:default_os_id)
       %th= model_class.human_attribute_name(:screen_inch)
@@ -25,7 +25,7 @@
         %td= link_to terminal_master.id, terminal_master_path(terminal_master)
         %td= terminal_master.carrier.name
         %td= terminal_master.maker.name
-        %td= terminal_master.series.name
+        %td= terminal_master.group.name
         %td= terminal_master.model_name
         %td= terminal_master.default_os.version_name
         %td= terminal_master.screen_inch
