@@ -13,7 +13,7 @@ ja:
     check_header: 貸出情報
 
     # footer
-    footer: "%{service_name} by サ開20%ルール"
+    footer: "%{service_name} by うえだの20%ルール"
 
     # devise general
     devise_edit: プロフィール編集
