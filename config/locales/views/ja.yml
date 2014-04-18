@@ -53,7 +53,7 @@ ja:
     check_flow: 貸出フロー
 
     # button
-    edit: 編集
+    show: 詳細
 
   carriers:
     index:
