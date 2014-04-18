@@ -13,4 +13,8 @@ module ApplicationHelper
     label
   end
 
+  def nought_or_cross(value)
+    (value == 1 || value == true) ? t('view.nought') : t('view.cross')
+  end
+
 end

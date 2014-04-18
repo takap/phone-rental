@@ -2,6 +2,8 @@ ja:
   view:
     # navbar
     service_name: 端末貸出
+    search_placeholder: 機種名など
+    search_button: 検索
     edit_profile: プロフィール編集
     logout: ログアウト
 
@@ -36,6 +38,8 @@ ja:
     check_empty_message: 該当する端末はありません。
     user_name: 氏名
 
+    # terminal
+
     # check
     new_check: 貸出予約
     available: 利用可能
@@ -49,8 +53,8 @@ ja:
     prepare_terminal: 端末準備
     check_out_terminal: 端末貸出
     check_in_terminal: 端末返却
-    take_out_true: あり
-    take_out_false: なし
+    nought: ◯
+    cross: ☓
     check_flow: 貸出フロー
 
     # button
@@ -130,9 +134,10 @@ ja:
       title: 端末マスタ編集
   terminals:
     index:
-      title: 端末
+      title: 端末一覧
+      search_title: 「%{key}」での検索結果
     show:
-      title: 端末
+      title: 端末詳細
     new:
       title: 新規端末登録
     edit:

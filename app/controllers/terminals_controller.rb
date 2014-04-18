@@ -4,7 +4,14 @@ class TerminalsController < ApplicationController
   # GET /terminals
   # GET /terminals.json
   def index
-    @terminals = Terminal.all
+    terminals_repo = TerminalsRepository.new
+    if @query = params[:q].presence
+      @terminals = terminals_repo.find_by_search_words @query
+      @title = t('terminals.index.search_title', key: @query)
+    else
+      @terminals = terminals_repo.find_detail
+      @title = t('terminals.index.title')
+    end
   end
 
   # GET /terminals/1
