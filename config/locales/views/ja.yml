@@ -29,6 +29,7 @@ ja:
     forget_password: パスワードを忘れた場合はこちら
 
     # dashboard
+    user_terminals: 予約中または貸出中の端末
     reserved_terminals: 準備する端末
     ready_terminals: 準備済の端末
     unavailable_terminals: 貸出中の端末
@@ -36,7 +37,7 @@ ja:
     user_name: 氏名
 
     # check
-    new_check: 貸出申込を行う
+    new_check: 貸出予約
     available: 利用可能
     reserved: 予約済
     ready: 準備済
@@ -142,7 +143,7 @@ ja:
     show:
       title: 貸出状態
     new:
-      title: 新規貸出登録
+      title: 新規貸出予約
     edit:
       title: 貸出編集
   dashboard:

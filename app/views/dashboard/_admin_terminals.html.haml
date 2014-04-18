@@ -20,7 +20,7 @@
       - checks.each do |check|
         %tr{check_id: "#{check.check_id}"}
           %td
-            = link_to check.status_view, "/checks/#{check.check_id}", {class: "btn #{check.status_class}"}
+            .btn{class: check.status_class}= check.status_view
           %td= "#{check.last_name} #{check.first_name}"
           %td= check.division_name
           %td= check.terminal_name

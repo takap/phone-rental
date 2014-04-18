@@ -24,6 +24,8 @@ module CheckBaseDecorator
 
   def status_class
     case status
+      when CHECK_STATUS_DOMAIN.AVAILABLE
+        CHECK_BUTTON_CLASS.AVAILABLE
       when CHECK_STATUS_DOMAIN.RESERVED
         CHECK_BUTTON_CLASS.RESERVED
       when CHECK_STATUS_DOMAIN.READY

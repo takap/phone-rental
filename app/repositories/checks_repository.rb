@@ -58,12 +58,16 @@ class ChecksRepository
         due_date: check_state[:due_date]
     )
 
-    check_state.update_attributes(
-        {
-            status: next_status,
-            note: check_params[:note],
-        }
-    )
+    if next_status == CHECK_STATUS_DB.AVAILABLE
+      check_state.destroy
+    else
+      check_state.update_attributes(
+          {
+              status: next_status,
+              note: check_params[:note],
+          }
+      )
+    end
   end
 
   def get_checks_on_client_dashboard_by_user_id(user_id)

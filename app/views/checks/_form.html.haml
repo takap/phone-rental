@@ -12,5 +12,5 @@
   = f.input :note
   .form-group
     .col-sm-offset-2.col-sm-10
-      = f.button :submit, :class => 'btn-primary'
-      = link_to t('.cancel', :default => t("helpers.links.cancel")), checks_create_path, :class => 'btn btn-default'
+      = f.button :submit, class: 'btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), "/terminals/#{@check.terminal_id}", :class => 'btn btn-default'

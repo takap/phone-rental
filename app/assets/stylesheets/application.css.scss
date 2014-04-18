@@ -69,4 +69,15 @@ table.table tbody tr {
   }
 }
 
-a.btn:visited { color: #fff; }
+a.btn-success:visited,
+a.btn-primary:visited,
+a.btn-info:visited,
+a.btn-warning:visited,
+a.btn-danger:visited {
+  color: #fff;
+}
+
+div.btn,
+p.btn {
+  cursor: default;
+}
