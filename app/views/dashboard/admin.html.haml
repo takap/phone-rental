@@ -3,3 +3,22 @@
 = render 'dashboard/admin_terminals', checks:@reserved_checks, header: t('view.reserved_terminals')
 = render 'dashboard/admin_terminals', checks:@ready_checks, header: t('view.ready_terminals')
 = render 'dashboard/admin_terminals', checks:@unavailable_checks, header: t('view.unavailable_terminals')
+.highlight
+  .header
+    %h3=t 'view.check_flow'
+  .flow
+    .highlight-inner
+      %div.btn.btn-primary= t('view.reserved')
+      ユーザの予約が入っておりますので、端末を準備してください。
+    .highlight-inner
+      %div.btn.btn-info= t('view.ready')
+      利用者が端末を取りに来た際に、端末を渡してください。
+    .highlight-inner
+      %div.btn.btn-warning= t('view.unavailable')
+      利用者に貸出している端末です。
+    .highlight-inner
+      %div.btn.btn-danger= t('view.owed_by_current_user_overdue')
+      利用者が貸出延滞している端末です。必要があれば返却の催促をしてください。
+    .highlight-inner
+      %div.btn.btn-success= t('view.available')
+      利用者に貸出可能な端末です。この画面には表示されません。

@@ -28,6 +28,8 @@
         %a.navbar-brand(href="/") PhoneRental
         .navbar-collapse.collapse
           %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to "端末検索" , terminals_path, :class => 'navbar-link'
             - if user_signed_in?
               %li
                 = link_to "#{current_user.last_name} さん" , edit_user_registration_path, :class => 'navbar-link'

@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: 788a7b24caf8fe58a5493aa3f6a065879a9f752a
+  specs:
+    jquery-datatables-rails (1.12.2)
+      jquery-rails
+      sass-rails
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 128f373e151528c9516ea8df32831fc60ac1c35d
   branch: bootstrap3
@@ -242,6 +250,7 @@ DEPENDENCIES
   haml-rails
   html2haml
   jbuilder (~> 2.0)
+  jquery-datatables-rails!
   jquery-rails
   mysql2
   newrelic_rpm

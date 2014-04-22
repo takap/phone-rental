@@ -13,7 +13,7 @@ ja:
     check_header: 貸出情報
 
     # footer
-    footer: "%{service_name} by うえだの20%ルール"
+    footer: "%{service_name} by Ueda's 20% rule"
 
     # devise general
     devise_edit: プロフィール編集
@@ -42,23 +42,29 @@ ja:
 
     # check
     new_check: 貸出予約
-    available: 利用可能
+    available: 利用可
     reserved: 予約済
     ready: 準備済
     unavailable: 貸出中
     unavailable_overdue: 延滞中
     owed_by_current_user: 貸出中
     owed_by_current_user_overdue: 延滞中
+    take_out_true: あり
+    take_out_false: なし
     apply_check: ユーザ申し込み
     prepare_terminal: 端末準備
     check_out_terminal: 端末貸出
     check_in_terminal: 端末返却
-    nought: ◯
-    cross: ☓
     check_flow: 貸出フロー
 
     # button
     show: 詳細
+
+    # value
+    nought: ◯
+    cross: ☓
+    nil: 未設定
+    na: '-'
 
   carriers:
     index:

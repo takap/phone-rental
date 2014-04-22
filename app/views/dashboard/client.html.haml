@@ -29,3 +29,22 @@
           %td= check.check_created_at
           %td= check.check_updated_at
           %td= check.due_date
+.highlight
+  .header
+    %h3=t 'view.check_flow'
+  .flow
+    .highlight-inner
+      %div.btn.btn-primary= t('view.reserved')
+      端末を準備しておりますので、しばらくお待ちください。
+    .highlight-inner
+      %div.btn.btn-info= t('view.ready')
+      端末の準備が出来ましたので、事務局までお越しください。
+    .highlight-inner
+      %div.btn.btn-warning= t('view.unavailable')
+      あなたに貸出している端末です。
+    .highlight-inner
+      %div.btn.btn-danger= t('view.owed_by_current_user_overdue')
+      あなたが貸出延滞している端末です。すぐに返却してください。
+    .highlight-inner
+      %div.btn.btn-success= t('view.available')
+      あなたに貸出可能な端末です。この画面には表示されません。

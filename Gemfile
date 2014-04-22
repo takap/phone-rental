@@ -58,6 +58,9 @@ gem 'devise'
 gem 'authority'
 gem 'rolify'
 
+# datatable
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+
 # Google Analytics
 gem 'google-analytics-rails'
 

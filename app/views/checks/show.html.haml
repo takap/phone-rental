@@ -71,7 +71,7 @@
       .form-group
         .col-sm-8
           = f.button :submit, value: @check.submit_button_value, class: @check.next_status_class
-          = link_to t('.cancel', :default => t("helpers.links.cancel")), checks_create_path, :class => 'btn btn-default'
+          = link_to t('.back', :default => t("helpers.links.back")), dashboard_admin_path, :class => 'btn btn-default'
   .col-sm-4
     .header
       %h2=t 'view.terminal_header'

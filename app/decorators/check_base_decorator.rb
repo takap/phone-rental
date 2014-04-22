@@ -3,6 +3,10 @@ module CheckBaseDecorator
     take_out == 1 ? t('view.take_out_true') : t('view.take_out_false')
   end
 
+  def note_view
+    note.presence || t('view.na')
+  end
+
   def status_view
     case status
       when CHECK_STATUS_DOMAIN.AVAILABLE
