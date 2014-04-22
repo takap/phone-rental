@@ -27,3 +27,10 @@ CHECK_BUTTON_CLASS = OpenStruct.new ({
     OWED_BY_CURRENT_USER: 'btn-warning',
     OWED_BY_CURRENT_USER_OVERDUE: 'btn-danger'
 })
+
+# Phone category
+PHONE_CATEGORY = OpenStruct.new ({
+    FEATURE: 1,
+    IOS: 2,
+    ANDROID: 3
+})

@@ -69,8 +69,8 @@
         .col-sm-8
           %p.form-control-static= @check.note
       .form-group
-        .col-sm-8
-          = f.button :submit, value: @check.submit_button_value, class: @check.next_status_class
+        .col-sm-12
+          = f.button :submit, value: t('view.check_button', next_status_value: @check.next_status_value), class: @check.next_status_class
           = link_to t('.back', :default => t("helpers.links.back")), dashboard_admin_path, :class => 'btn btn-default'
   .col-sm-4
     .header

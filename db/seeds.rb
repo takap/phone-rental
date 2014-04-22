@@ -24,6 +24,13 @@ CSV.foreach('db/seeds/makers.csv') do |row|
   )
 end
 
+CSV.foreach('db/seeds/categories.csv') do |row|
+  Category.create(
+      id: row[0],
+      name: row[1],
+  )
+end
+
 CSV.foreach('db/seeds/groups.csv') do |row|
   Group.create(
       id: row[0],
@@ -86,18 +93,19 @@ CSV.foreach('db/seeds/terminal_masters.csv') do |row|
       id: row[0],
       carrier_id: row[1],
       maker_id: row[2],
-      group_id: row[3],
-      model_name: row[4],
-      default_os_id: row[5],
-      screen_inch: row[6],
-      screen_height: row[7],
-      screen_width: row[8],
-      screen_density_id: row[9],
-      tablet: row[10],
-      nfc: row[11],
-      release_date: row[12],
-      created_at: row[13],
-      updated_at: row[13],
+      category_id: row[3],
+      group_id: row[4],
+      model_name: row[5],
+      default_os_id: row[6],
+      screen_inch: row[7],
+      screen_height: row[8],
+      screen_width: row[9],
+      screen_density_id: row[10],
+      tablet: row[11],
+      nfc: row[12],
+      release_date: row[13],
+      created_at: row[14],
+      updated_at: row[14],
   )
 end
 

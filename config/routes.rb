@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories
+
   resources :groups
 
   devise_for :users
@@ -13,6 +15,9 @@ Rails.application.routes.draw do
   get 'checks/:id' => 'checks#show'
   post 'checks/update' => 'checks#update'
 
+  get 'terminals/feature'
+  get 'terminals/ios'
+  get 'terminals/android'
   resources :terminals
 
   resources :terminal_masters

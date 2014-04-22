@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416054440) do
+ActiveRecord::Schema.define(version: 20140422015745) do
 
   create_table "carriers", force: true do |t|
     t.string   "name"
     t.string   "name_kana"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -111,6 +117,7 @@ ActiveRecord::Schema.define(version: 20140416054440) do
   create_table "terminal_masters", force: true do |t|
     t.integer  "carrier_id"
     t.integer  "maker_id"
+    t.integer  "category_id"
     t.integer  "group_id"
     t.string   "model_name"
     t.integer  "default_os_id"
@@ -126,6 +133,7 @@ ActiveRecord::Schema.define(version: 20140416054440) do
   end
 
   add_index "terminal_masters", ["carrier_id"], name: "index_terminal_masters_on_carrier_id", using: :btree
+  add_index "terminal_masters", ["category_id"], name: "index_terminal_masters_on_category_id", using: :btree
   add_index "terminal_masters", ["default_os_id"], name: "index_terminal_masters_on_default_os_id", using: :btree
   add_index "terminal_masters", ["group_id"], name: "index_terminal_masters_on_group_id", using: :btree
   add_index "terminal_masters", ["maker_id"], name: "index_terminal_masters_on_maker_id", using: :btree

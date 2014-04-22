@@ -6,7 +6,9 @@ class ChecksController < ApplicationController
   def create
     repo = ChecksRepository.new
     repo.create(current_user.id, check_params)
+    terminal = Terminal.where(id: check_params[:terminal_id]).first
     redirect_to '/'
+    flash[:success] = t('view.check_create_message', terminal_name: terminal.name)
   end
 
   def show
@@ -19,7 +21,9 @@ class ChecksController < ApplicationController
   def update
     repo = ChecksRepository.new
     repo.update(current_user.id, check_params)
+    terminal = Terminal.where(id: check_params[:terminal_id]).first
     redirect_to '/'
+    flash[:success] = t('view.check_update_message', terminal_name: terminal.name)
   end
 
   private

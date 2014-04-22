@@ -1,5 +1,5 @@
 class TerminalsController < ApplicationController
-  before_action :set_terminal, only: [:show, :edit, :update, :destroy]
+  before_action :set_terminal, only: [:edit, :update, :destroy]
 
   # GET /terminals
   # GET /terminals.json
@@ -14,9 +14,36 @@ class TerminalsController < ApplicationController
     end
   end
 
+  # GET /terminals/ios
+  # GET /terminals/ios.json
+  def ios
+    terminals_repo = TerminalsRepository.new
+    @terminals = terminals_repo.find_ios
+    @title = t('terminals.index.title')
+  end
+
+  # GET /terminals/android
+  # GET /terminals/android.json
+  def android
+    terminals_repo = TerminalsRepository.new
+    @terminals = terminals_repo.find_android
+    @title = t('terminals.index.title')
+  end
+
+  # GET /terminals/feature
+  # GET /terminals/feature.json
+  def feature
+    terminals_repo = TerminalsRepository.new
+    @terminals = terminals_repo.find_feature
+    @title = t('terminals.index.title')
+  end
+
   # GET /terminals/1
   # GET /terminals/1.json
   def show
+    terminals_repo = TerminalsRepository.new
+    @terminal = terminals_repo.find_detail_by_id params[:id]
+    @check = CheckState.where(terminal_id: params[:id]).first
   end
 
   # GET /terminals/new

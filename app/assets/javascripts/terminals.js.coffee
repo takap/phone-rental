@@ -12,7 +12,7 @@ $ ->
       "sInfoFiltered": " (全 _MAX_ 件からフィルタ)"
       "sInfoPostFix": ""
       "sLengthMenu": "_MENU_ 件ずつ表示"
-      "sZeroRecords"   : "該当するユーザが見つかりませんでした"
+      "sZeroRecords"   : "該当する端末が見つかりませんでした"
       "sSearch": ""
       "sUrl": ""
       "bProcessing" : true

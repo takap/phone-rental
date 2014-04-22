@@ -20,7 +20,7 @@ module CheckDecorator
     end
   end
 
-  def submit_button_value
+  def next_status_value
     case status
       when CHECK_STATUS_DOMAIN.AVAILABLE
         t('view.reserved')

@@ -17,7 +17,6 @@
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
 
-
   %body
     .navbar.navbar-inverse.navbar-static-top
       .container
@@ -25,16 +24,24 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand(href="/") PhoneRental
+        %a.navbar-brand(href="/")
+          = t('view.service_name')
+          -if user_signed_in? && (current_user.has_role? :admin)
+            = t('view.admin_view')
+          -else
+            = t('view.client_view')
         .navbar-collapse.collapse
-          %ul.nav.navbar-nav.navbar-right
+          %ul.nav.navbar-nav
             %li
-              = link_to "端末検索" , terminals_path, :class => 'navbar-link'
+              = link_to t('view.ios') , terminals_ios_path, :class => 'navbar-link'
+            %li
+              = link_to t('view.android') , terminals_android_path, :class => 'navbar-link'
+            %li
+              = link_to t('view.feature') , terminals_feature_path, :class => 'navbar-link'
+          %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               %li
-                = link_to "#{current_user.last_name} さん" , edit_user_registration_path, :class => 'navbar-link'
-              %li
-                = link_to t('view.edit_profile'), edit_user_registration_path, :class => 'navbar-link'
+                = link_to t('view.edit_profile', user_name: current_user.last_name), edit_user_registration_path, :class => 'navbar-link'
               %li
                 = link_to t('view.logout'), destroy_user_session_path, method: :delete, :class => 'navbar-link'
     .container

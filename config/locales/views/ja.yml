@@ -1,10 +1,13 @@
 ja:
   view:
     # navbar
-    service_name: 端末貸出
-    search_placeholder: 機種名など
-    search_button: 検索
-    edit_profile: プロフィール編集
+    service_name: ケータイ端末貸出
+    admin_view: 管理者画面
+    client_view: 利用者画面
+    ios: iOS
+    android: Android
+    feature: ガラケー
+    edit_profile: "%{user_name} さんのプロフィール編集"
     logout: ログアウト
 
     # header
@@ -13,7 +16,7 @@ ja:
     check_header: 貸出情報
 
     # footer
-    footer: "%{service_name} by Ueda's 20% rule"
+    footer: "%{service_name} by 20%ルール"
 
     # devise general
     devise_edit: プロフィール編集
@@ -33,7 +36,7 @@ ja:
     # dashboard
     user_terminals: 予約中または貸出中の端末
     reserved_terminals: 準備する端末
-    ready_terminals: 準備済の端末
+    ready_terminals: 利用者にわたす端末
     unavailable_terminals: 貸出中の端末
     check_empty_message: 該当する端末はありません。
     user_name: 氏名
@@ -56,13 +59,16 @@ ja:
     check_out_terminal: 端末貸出
     check_in_terminal: 端末返却
     check_flow: 貸出フロー
+    check_button: "「%{next_status_value}」 に変更"
+    check_create_message: "%{terminal_name}の貸出予約を行いました。"
+    check_update_message: "%{terminal_name}の貸出状態を更新しました。"
 
     # button
     show: 詳細
 
     # value
     nought: ◯
-    cross: ☓
+    cross: ×
     nil: 未設定
     na: '-'
 

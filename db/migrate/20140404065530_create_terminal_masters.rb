@@ -3,6 +3,7 @@ class CreateTerminalMasters < ActiveRecord::Migration
     create_table :terminal_masters do |t|
       t.references :carrier, index: true
       t.references :maker, index: true
+      t.references :category, index: true
       t.references :group, index: true
       t.string :model_name
       t.references :default_os, index: true

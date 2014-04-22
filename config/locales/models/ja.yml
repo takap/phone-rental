@@ -70,21 +70,27 @@ ja:
         nfc: NFC
       terminal:
         <<: *base
-        name: 名称
+        name: 端末記号
+        terminal_name: 端末記号
         terminal_master_id: 端末マスタ
         volume: 番号
+        release_date: 発売日
         color_id: 色
         phone_number: 電話番号
         updated_os_id: 更新OS
         place_id: 場所
-        wifi: Wi-Fi
         carrier_name: キャリア
         maker_name: メーカー
         model_name: モデル
         default_os: 初期OS
         updated_os: 更新OS
         screen_inch: 画面インチ
+        screen_width_height: 画面幅×高さ
+        tablet: タブレット
+        wifi: Wi-Fi
         nfc: NFC
+        default_os_version_name: 初期OSバージョン名
+        updated_os_version_name: 更新OSバージョン名
       user:
         <<: *base
         last_name: 姓
