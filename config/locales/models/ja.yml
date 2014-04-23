@@ -60,7 +60,7 @@ ja:
         maker_id: メーカ
         group_id: シリーズ
         model_name: モデル
-        default_os_id: 初期OS
+        default_os: 初期OS
         screen_inch: 画面インチ
         screen_width: 画面幅
         screen_height: 画面高さ
@@ -75,9 +75,9 @@ ja:
         terminal_master_id: 端末マスタ
         volume: 番号
         release_date: 発売日
-        color_id: 色
+        color: 色
         phone_number: 電話番号
-        updated_os_id: 更新OS
+        updated_os: 更新OS
         place_id: 場所
         carrier_name: キャリア
         maker_name: メーカー
@@ -86,6 +86,7 @@ ja:
         updated_os: 更新OS
         screen_inch: 画面 インチ
         screen_width_height: 画面 幅 × 高さ
+        screen_density: 画面密度
         tablet: タブレット
         wifi: Wi-Fi
         nfc: NFC
@@ -96,7 +97,7 @@ ja:
         last_name: 姓
         first_name: 名
         phone_number: 内線番号
-        division_id: 部門名
+        division: 部門名
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
@@ -128,7 +129,7 @@ ja:
       check_on_admin_dashboard:
         check_id: ID
         terminal_name: 端末記号
-        division_name: 部署名
+        division: 部署名
         status: 状態
         carrier_name: キャリア
         maker_name: メーカ

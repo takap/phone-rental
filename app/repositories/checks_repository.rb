@@ -131,7 +131,7 @@ class ChecksRepository
             check_id: check['check_id'],
             last_name: check['last_name'],
             first_name: check['first_name'],
-            division_name: check['division_name'],
+            division: check['division'],
             terminal_name: check['terminal_name'],
             status: check_status(check),
             take_out: check['take_out'],

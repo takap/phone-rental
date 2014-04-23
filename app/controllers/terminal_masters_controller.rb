@@ -70,6 +70,6 @@ class TerminalMastersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def terminal_master_params
-      params.require(:terminal_master).permit(:carrier_id, :maker_id, :series_id, :model_id, :default_os_id, :screen_inch_id, :screen_width_id, :screen_height_id, :screen_density_id, :release_date, :tablet, :nfc)
+      params.require(:terminal_master).permit(:carrier_id, :maker_id, :series_id, :model_id, :default_os, :screen_inch_id, :screen_width_id, :screen_height_id, :screen_density_id, :release_date, :tablet, :nfc)
     end
 end

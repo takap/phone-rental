@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  belongs_to :division
   # enable creatable_by?(user)
   include Authority::Abilities
 

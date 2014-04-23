@@ -22,4 +22,4 @@ $ ->
     "iDisplayLength": "-1"
     "sPaginationType": "bootstrap"
 
-  $('#terminals_filter > label > input').addClass('form-control input-sm').attr('placeholder', 'なまえの一部を入力').focus()
+  $('#terminals_filter > label > input').addClass('form-control input-sm').attr('placeholder', 'キーワードを入力').focus()

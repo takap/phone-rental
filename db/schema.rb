@@ -56,19 +56,6 @@ ActiveRecord::Schema.define(version: 20140422015745) do
   add_index "check_states", ["terminal_id"], name: "index_check_states_on_terminal_id", using: :btree
   add_index "check_states", ["user_id"], name: "index_check_states_on_user_id", using: :btree
 
-  create_table "colors", force: true do |t|
-    t.string   "name"
-    t.string   "hex"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "divisions", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "groups", force: true do |t|
     t.string   "name"
     t.string   "name_kana"
@@ -79,14 +66,6 @@ ActiveRecord::Schema.define(version: 20140422015745) do
   create_table "makers", force: true do |t|
     t.string   "name"
     t.string   "name_kana"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "operating_systems", force: true do |t|
-    t.string   "version_name"
-    t.integer  "api_level"
-    t.string   "code_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -120,7 +99,7 @@ ActiveRecord::Schema.define(version: 20140422015745) do
     t.integer  "category_id"
     t.integer  "group_id"
     t.string   "model_name"
-    t.integer  "default_os_id"
+    t.string   "default_os"
     t.float    "screen_inch"
     t.integer  "screen_width"
     t.integer  "screen_height"
@@ -134,7 +113,6 @@ ActiveRecord::Schema.define(version: 20140422015745) do
 
   add_index "terminal_masters", ["carrier_id"], name: "index_terminal_masters_on_carrier_id", using: :btree
   add_index "terminal_masters", ["category_id"], name: "index_terminal_masters_on_category_id", using: :btree
-  add_index "terminal_masters", ["default_os_id"], name: "index_terminal_masters_on_default_os_id", using: :btree
   add_index "terminal_masters", ["group_id"], name: "index_terminal_masters_on_group_id", using: :btree
   add_index "terminal_masters", ["maker_id"], name: "index_terminal_masters_on_maker_id", using: :btree
   add_index "terminal_masters", ["screen_density_id"], name: "index_terminal_masters_on_screen_density_id", using: :btree
@@ -143,19 +121,17 @@ ActiveRecord::Schema.define(version: 20140422015745) do
     t.string   "name"
     t.integer  "terminal_master_id"
     t.integer  "volume"
-    t.integer  "color_id"
+    t.string   "color"
     t.string   "phone_number"
-    t.integer  "updated_os_id"
+    t.string   "updated_os"
     t.integer  "place_id"
     t.integer  "wifi"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "terminals", ["color_id"], name: "index_terminals_on_color_id", using: :btree
   add_index "terminals", ["place_id"], name: "index_terminals_on_place_id", using: :btree
   add_index "terminals", ["terminal_master_id"], name: "index_terminals_on_terminal_master_id", using: :btree
-  add_index "terminals", ["updated_os_id"], name: "index_terminals_on_updated_os_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -173,7 +149,7 @@ ActiveRecord::Schema.define(version: 20140422015745) do
     t.string   "last_name"
     t.string   "first_name"
     t.string   "phone_number"
-    t.integer  "division_id"
+    t.string   "division"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

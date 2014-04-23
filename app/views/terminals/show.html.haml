@@ -47,17 +47,17 @@
 
   .form-group
     %label.col-sm-2.control-label
-      = tt('Terminal.default_os_version_name')
+      = tt('Terminal.default_os')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:default_os_version_name]
+        = @terminal[:default_os]
 
   .form-group
     %label.col-sm-2.control-label
-      = tt('Terminal.updated_os_version_name')
+      = tt('Terminal.updated_os')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:updated_os_version_name]
+        = @terminal[:updated_os]
 
   .form-group
     %label.col-sm-2.control-label
@@ -72,6 +72,20 @@
     .col-sm-10
       %p.form-control-static
         = "#{@terminal[:screen_width]} × #{@terminal[:screen_height]}"
+
+  .form-group
+    %label.col-sm-2.control-label
+      = tt('Terminal.screen_density')
+    .col-sm-10
+      %p.form-control-static
+        = @terminal[:screen_density]
+
+  .form-group
+    %label.col-sm-2.control-label
+      = tt('Terminal.color')
+    .col-sm-10
+      %p.form-control-static
+        = @terminal[:color]
 
   .form-group
     %label.col-sm-2.control-label

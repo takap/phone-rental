@@ -9,7 +9,7 @@
       %tr
         %th= tt('CheckOnAdminDashboard.status')
         %th= t('view.user_name')
-        %th= tt('CheckOnAdminDashboard.division_name')
+        %th= tt('CheckOnAdminDashboard.division')
         %th= tt('CheckOnAdminDashboard.terminal_name')
         %th= tt('CheckOnAdminDashboard.model_name')
         %th= tt('CheckOnAdminDashboard.check_created_at')
@@ -22,7 +22,7 @@
           %td
             .btn{class: check.status_class}= check.status_view
           %td= "#{check.last_name} #{check.first_name}"
-          %td= check.division_name
+          %td= check.division
           %td= check.terminal_name
           %td= check.model_name
           %td= check.check_created_at

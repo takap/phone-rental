@@ -3,6 +3,6 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :last_name, :string
     add_column :users, :first_name, :string
     add_column :users, :phone_number, :string
-    add_column :users, :division_id, :string
+    add_column :users, :division, :string
   end
 end

@@ -19,9 +19,9 @@
           %p.form-control-static= @user.phone_number
       .form-group
         %label.col-sm-4.control-label
-          = tt('User.division_id')
+          = tt('User.division')
         .col-sm-8
-          %p.form-control-static= @user.division.name
+          %p.form-control-static= @user.division
       .form-group
         %label.col-sm-4.control-label
           = tt('User.email')
@@ -100,7 +100,7 @@
         %label.col-sm-4.control-label
           = tt('Color.name')
         .col-sm-8
-          %p.form-control-static= @terminal.color.name
+          %p.form-control-static= @terminal.color
 .row
   .highlight
     .header

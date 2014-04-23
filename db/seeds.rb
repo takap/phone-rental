@@ -39,29 +39,10 @@ CSV.foreach('db/seeds/groups.csv') do |row|
   )
 end
 
-CSV.foreach('db/seeds/operating_systems.csv') do |row|
-  OperatingSystem.create(
-      id: row[0],
-      version_name: row[1],
-      api_level: row[2],
-      code_name: row[3],
-      created_at: row[4],
-      updated_at: row[4],
-  )
-end
-
 CSV.foreach('db/seeds/screen_densities.csv') do |row|
   ScreenDensity.create(
       id: row[0],
       size: row[1],
-  )
-end
-
-CSV.foreach('db/seeds/colors.csv') do |row|
-  Color.create(
-      id: row[0],
-      name: row[1],
-      hex: row[2],
   )
 end
 
@@ -78,9 +59,9 @@ CSV.foreach('db/seeds/terminals.csv') do |row|
       name: row[1],
       terminal_master_id: row[2],
       volume: row[3],
-      color_id: row[4],
+      color: row[4],
       phone_number: row[5],
-      updated_os_id: row[6],
+      updated_os: row[6],
       place_id: row[7],
       wifi: row[8],
       created_at: row[9],
@@ -96,7 +77,7 @@ CSV.foreach('db/seeds/terminal_masters.csv') do |row|
       category_id: row[3],
       group_id: row[4],
       model_name: row[5],
-      default_os_id: row[6],
+      default_os: row[6],
       screen_inch: row[7],
       screen_height: row[8],
       screen_width: row[9],
@@ -106,12 +87,5 @@ CSV.foreach('db/seeds/terminal_masters.csv') do |row|
       release_date: row[13],
       created_at: row[14],
       updated_at: row[14],
-  )
-end
-
-CSV.foreach('db/seeds/divisions.csv') do |row|
-  Division.create(
-      id: row[0],
-      name: row[1],
   )
 end

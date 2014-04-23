@@ -24,17 +24,11 @@ Rails.application.routes.draw do
 
   resources :places
 
-  resources :colors
-
   resources :screen_densities
-
-  resources :operating_systems
 
   resources :makers
 
   resources :carriers
-
-  resources :divisions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

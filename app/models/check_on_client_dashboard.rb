@@ -19,7 +19,7 @@ class CheckOnClientDashboard
                 :due_date,
                 :check_created_at,
                 :check_updated_at,
-                :color_id,
+                :color,
                 :phone_number,
                 :wifi,
                 :carrier_name_kana,
