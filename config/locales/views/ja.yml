@@ -15,9 +15,6 @@ ja:
     terminal_header: 端末情報
     check_header: 貸出情報
 
-    # footer
-    footer: "%{service_name} by 20%ルール"
-
     # devise general
     devise_edit: プロフィール編集
     devise_update: 更新

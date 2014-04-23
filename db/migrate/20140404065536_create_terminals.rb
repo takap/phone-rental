@@ -4,9 +4,9 @@ class CreateTerminals < ActiveRecord::Migration
       t.string :name
       t.references :terminal_master, index: true
       t.integer :volume
-      t.references :color, index: true
+      t.string :color
       t.string :phone_number
-      t.references :updated_os, index: true
+      t.string :updated_os
       t.references :place, index: true
       t.integer :wifi
 

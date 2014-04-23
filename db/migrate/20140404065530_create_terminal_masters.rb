@@ -6,7 +6,7 @@ class CreateTerminalMasters < ActiveRecord::Migration
       t.references :category, index: true
       t.references :group, index: true
       t.string :model_name
-      t.references :default_os, index: true
+      t.string :default_os
       t.float :screen_inch
       t.integer :screen_width
       t.integer :screen_height

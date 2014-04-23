@@ -105,11 +105,7 @@
   .highlight
     .header
       %h3=t 'view.check_flow'
-    .flow
-      %div.btn.btn-success= t('view.available')
-      >
-      %div.btn.btn-default= t('view.apply_check')
-      >
+    .flow.center-horizontal
       %div.btn.btn-primary= t('view.reserved')
       >
       %div.btn.btn-default= t('view.prepare_terminal')
@@ -119,6 +115,8 @@
       %div.btn.btn-default= t('view.check_out_terminal')
       >
       %div.btn.btn-warning= t('view.unavailable')
+      or
+      %div.btn.btn-danger= t('view.unavailable_overdue')
       >
       %div.btn.btn-default= t('view.check_in_terminal')
       >

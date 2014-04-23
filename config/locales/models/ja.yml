@@ -84,8 +84,8 @@ ja:
         model_name: モデル
         default_os: 初期OS
         updated_os: 更新OS
-        screen_inch: 画面インチ
-        screen_width_height: 画面幅×高さ
+        screen_inch: 画面 インチ
+        screen_width_height: 画面 幅 × 高さ
         tablet: タブレット
         wifi: Wi-Fi
         nfc: NFC

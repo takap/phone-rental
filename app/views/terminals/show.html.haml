@@ -43,7 +43,7 @@
       = tt('Terminal.release_date')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:release_date]
+        = format_date @terminal[:release_date]
 
   .form-group
     %label.col-sm-2.control-label

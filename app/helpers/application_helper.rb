@@ -17,4 +17,12 @@ module ApplicationHelper
     (value == 1 || value == true) ? t('view.nought') : t('view.cross')
   end
 
+  def format_date(date)
+    date.present? ? date.strftime('%Y/%m/%d') : I18n.t('view.na')
+  end
+
+  def format_datetime(date)
+    date.present? ? date.strftime('%Y/%m/%d %H:%M:%S') : I18n.t('view.na')
+  end
+
 end
