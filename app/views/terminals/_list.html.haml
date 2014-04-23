@@ -5,12 +5,19 @@
 %table#terminals.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:carrier_name)
+      -if current_user.has_role? :admin
+        %th= model_class.human_attribute_name(:terminal_name)
+      -else
+        %th= model_class.human_attribute_name(:carrier_name)
       %th= model_class.human_attribute_name(:maker_name)
       %th= model_class.human_attribute_name(:model_name)
+      -if current_user.has_role? :admin
+        %th= model_class.human_attribute_name(:color)
       %th= model_class.human_attribute_name(:default_os)
       %th= model_class.human_attribute_name(:updated_os)
       %th= model_class.human_attribute_name(:screen_inch)
+      -if current_user.has_role? :admin
+        %th= model_class.human_attribute_name(:screen_density)
       %th= model_class.human_attribute_name(:phone_number)
       %th= model_class.human_attribute_name(:wifi)
       %th= model_class.human_attribute_name(:nfc)
@@ -22,20 +29,32 @@
   %tbody
     - @terminals.each do |terminal|
       %tr
-        %td= terminal.carrier_name
+        -if current_user.has_role? :admin
+          %td= terminal.terminal_name
+        -else
+          %td= terminal.carrier_name
         %td= terminal.maker_name
         %td= terminal.model_name
+        -if current_user.has_role? :admin
+          %td= terminal.color
         %td= terminal.default_os
         %td= terminal.updated_os
         %td= terminal.screen_inch
-        %td= nought_or_cross terminal.phone_number.present?
+        -if current_user.has_role? :admin
+          %td= terminal.screen_density
+          %td= terminal.phone_number
+        -else
+          %td= nought_or_cross terminal.phone_number.present?
         %td= nought_or_cross terminal.wifi
         %td= nought_or_cross terminal.nfc
-        %td=l terminal.release_date
+        -if terminal.release_date.present?
+          %td=l terminal.release_date
+        -else
+          %td= t('view.na')
         -if current_user.has_role? :admin
           %td
-            = link_to t('.edit', :default => t("helpers.links.edit")), edit_terminal_path(terminal), :class => 'btn btn-default btn-xs'
-            = link_to t('.destroy', :default => t("helpers.links.destroy")), terminal_path(terminal), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+            = link_to t('.edit', :default => t("helpers.links.edit")), edit_terminal_path(terminal.terminal_id), :class => 'btn btn-default btn-xs'
+            = link_to t('.destroy', :default => t("helpers.links.destroy")), terminal_path(terminal.terminal_id), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
         -else
           %td= link_to t('view.show'), "/terminals/#{terminal.terminal_id}", class: 'btn btn-primary'
 -if current_user.has_role? :admin
