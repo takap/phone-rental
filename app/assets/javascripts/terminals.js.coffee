@@ -19,7 +19,7 @@ $ ->
       "oPaginate":
         "sNext": "次のページ"
         "sPrevious": "前のページ"
-    "iDisplayLength": "10"
+    "iDisplayLength": 10
     "sPaginationType": "bootstrap"
 
   $('#terminals_filter > label > input').addClass('form-control input-sm').attr('placeholder', 'キーワードを入力').focus()
