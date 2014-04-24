@@ -56,8 +56,9 @@ CSV.foreach('db/seeds/terminals.csv') do |row|
       phone_number: row[5],
       updated_os: row[6],
       wifi: row[7],
-      created_at: row[8],
-      created_at: row[8]
+      note: row[8],
+      created_at: row[9],
+      created_at: row[9]
   )
 end
 

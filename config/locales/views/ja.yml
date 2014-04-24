@@ -70,7 +70,7 @@ ja:
     nought: ◯
     cross: ×
     nil: 未設定
-    na: '-'
+    na: 'ー'
 
   carriers:
     index:

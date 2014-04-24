@@ -122,6 +122,13 @@
       %p.form-control-static
         = nought_or_cross @terminal[:tablet]
 
+  .form-group
+    %label.col-sm-2.control-label
+      = tt('Terminal.note')
+    .col-sm-10
+      %p.form-control-static
+        = @terminal[:note].presence || t('view.na')
+
 .form-group
   .col-sm-offset-2.col-sm-10
     -if @check.present?

@@ -86,6 +86,7 @@ ja:
         wifi: Wi-Fi
         nfc: NFC
         tablet: タブレット
+        note: 備考
         default_os_version_name: 初期OSバージョン名
         updated_os_version_name: 更新OSバージョン名
       user:

@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20140422015745) do
     t.string   "phone_number"
     t.integer  "sim"
     t.integer  "wifi"
+    t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

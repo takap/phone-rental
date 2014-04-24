@@ -9,6 +9,7 @@ class CreateTerminals < ActiveRecord::Migration
       t.string :phone_number
       t.integer :sim
       t.integer :wifi
+      t.string :note
 
       t.timestamps
     end
