@@ -4,5 +4,6 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :first_name, :string
     add_column :users, :phone_number, :string
     add_column :users, :division, :string
+    add_column :users, :manager_name, :string
   end
 end

@@ -70,12 +70,6 @@ ActiveRecord::Schema.define(version: 20140422015745) do
     t.datetime "updated_at"
   end
 
-  create_table "places", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "roles", force: true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -124,13 +118,11 @@ ActiveRecord::Schema.define(version: 20140422015745) do
     t.string   "color"
     t.string   "phone_number"
     t.string   "updated_os"
-    t.integer  "place_id"
     t.integer  "wifi"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "terminals", ["place_id"], name: "index_terminals_on_place_id", using: :btree
   add_index "terminals", ["terminal_master_id"], name: "index_terminals_on_terminal_master_id", using: :btree
 
   create_table "users", force: true do |t|
@@ -150,6 +142,7 @@ ActiveRecord::Schema.define(version: 20140422015745) do
     t.string   "first_name"
     t.string   "phone_number"
     t.string   "division"
+    t.string   "manager_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

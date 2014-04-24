@@ -46,13 +46,6 @@ CSV.foreach('db/seeds/screen_densities.csv') do |row|
   )
 end
 
-CSV.foreach('db/seeds/places.csv') do |row|
-  Place.create(
-      id: row[0],
-      name: row[1],
-  )
-end
-
 CSV.foreach('db/seeds/terminals.csv') do |row|
   Terminal.create(
       id: row[0],
@@ -62,10 +55,9 @@ CSV.foreach('db/seeds/terminals.csv') do |row|
       color: row[4],
       phone_number: row[5],
       updated_os: row[6],
-      place_id: row[7],
-      wifi: row[8],
-      created_at: row[9],
-      created_at: row[9]
+      wifi: row[7],
+      created_at: row[8],
+      created_at: row[8]
   )
 end
 

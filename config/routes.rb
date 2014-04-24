@@ -22,8 +22,6 @@ Rails.application.routes.draw do
 
   resources :terminal_masters
 
-  resources :places
-
   resources :screen_densities
 
   resources :makers

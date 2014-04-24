@@ -7,7 +7,6 @@ class CreateTerminals < ActiveRecord::Migration
       t.string :color
       t.string :phone_number
       t.string :updated_os
-      t.references :place, index: true
       t.integer :wifi
 
       t.timestamps

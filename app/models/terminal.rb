@@ -1,6 +1,5 @@
 class Terminal < ActiveRecord::Base
   belongs_to :terminal_master
-  belongs_to :place
 
   def self.find_details_by_category category
     hash = ActiveRecord::Base.connection.select(<<-SQL

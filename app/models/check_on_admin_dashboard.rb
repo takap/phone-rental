@@ -5,7 +5,6 @@ class CheckOnAdminDashboard
                 :carrier_id,
                 :maker_id,
                 :group_id,
-                :place_id,
                 :last_name,
                 :first_name,
                 :division,

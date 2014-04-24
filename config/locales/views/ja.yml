@@ -117,24 +117,6 @@ ja:
       title: 新規画面密度登録
     edit:
       title: 画面密度編集
-  colors:
-    index:
-      title: 色
-    show:
-      title: 色詳細
-    new:
-      title: 新規色登録
-    edit:
-      title: 色編集
-  places:
-    index:
-      title: 場所
-    show:
-      title: 場所詳細
-    new:
-      title: 新規場所登録
-    edit:
-      title: 場所編集
   terminal_masters:
     index:
       title: 端末マスタ

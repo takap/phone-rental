@@ -20,7 +20,6 @@ ja:
         screen_height: 画面高さ
         screen_density: 画面密度
         color: 色
-        place: 場所
         terminal: 端末
         terminal_master: 端末マスタ
         user: ユーザ
@@ -51,9 +50,6 @@ ja:
         <<: *base
         name: 色
         hex: 色(16進数)
-      place:
-        <<: *base
-        name: 場所
       terminal_master:
         <<: *base
         carrier_id: キャリア
@@ -78,7 +74,6 @@ ja:
         color: 色
         phone_number: 電話番号
         updated_os: 更新OS
-        place_id: 場所
         carrier_name: キャリア
         maker_name: メーカー
         model_name: モデル
@@ -98,6 +93,7 @@ ja:
         first_name: 名
         phone_number: 内線番号
         division: 部門名
+        manager_name: マネージャ名
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認

@@ -9,7 +9,6 @@ describe "terminals/new" do
       :color => nil,
       :phone_number => "MyString",
       :updated_os => nil,
-      :place => nil,
       :wifi => 1
     ).as_new_record)
   end

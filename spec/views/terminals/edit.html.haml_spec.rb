@@ -9,7 +9,6 @@ describe "terminals/edit" do
       :color => nil,
       :phone_number => "MyString",
       :updated_os => nil,
-      :place => nil,
       :wifi => 1
     ))
   end
@@ -25,7 +24,6 @@ describe "terminals/edit" do
       assert_select "input#terminal_color[name=?]", "terminal[color]"
       assert_select "input#terminal_phone_number[name=?]", "terminal[phone_number]"
       assert_select "input#terminal_updated_os[name=?]", "terminal[updated_os]"
-      assert_select "input#terminal_place[name=?]", "terminal[place]"
       assert_select "input#terminal_wifi[name=?]", "terminal[wifi]"
     end
   end

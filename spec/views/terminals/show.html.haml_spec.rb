@@ -9,7 +9,6 @@ describe "terminals/show" do
       :color => nil,
       :phone_number => "Phone Number",
       :updated_os => nil,
-      :place => nil,
       :wifi => 2
     ))
   end

@@ -5,7 +5,6 @@ class CheckOnClientDashboard
                 :carrier_id,
                 :maker_id,
                 :group_id,
-                :place_id,
                 :terminal_name,
                 :terminal_id,
                 :status,
