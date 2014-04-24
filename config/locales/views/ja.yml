@@ -37,7 +37,7 @@ ja:
     user_terminals: 予約中または貸出中の端末
     reserved_terminals: 準備する端末
     ready_terminals: 利用者にわたす端末
-    unavailable_terminals: 貸出中の端末
+    checked_out_terminals: 貸出中の端末
     check_empty_message: 該当する端末はありません。
     user_name: 氏名
 
@@ -45,11 +45,12 @@ ja:
 
     # check
     new_check: 貸出予約
+    unavailable: 貸出不可
     available: 利用可
     reserved: 予約済
     ready: 準備済
-    unavailable: 貸出中
-    unavailable_overdue: 延滞中
+    checked_out: 貸出中
+    checked_out_overdue: 延滞中
     owed_by_current_user: 貸出中
     owed_by_current_user_overdue: 延滞中
     take_out_true: あり

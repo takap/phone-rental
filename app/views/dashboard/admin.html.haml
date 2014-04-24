@@ -2,7 +2,7 @@
   %h1= t('.title')
 = render 'dashboard/admin_terminals', checks:@reserved_checks, header: t('view.reserved_terminals')
 = render 'dashboard/admin_terminals', checks:@ready_checks, header: t('view.ready_terminals')
-= render 'dashboard/admin_terminals', checks:@unavailable_checks, header: t('view.unavailable_terminals')
+= render 'dashboard/admin_terminals', checks:@checked_out_checks, header: t('view.checked_out_terminals')
 .highlight
   .header
     %h3=t 'view.check_flow'
@@ -14,7 +14,7 @@
       %div.btn.btn-info= t('view.ready')
       利用者が端末を取りに来た際に、端末を渡してください。
     .highlight-inner
-      %div.btn.btn-warning= t('view.unavailable')
+      %div.btn.btn-warning= t('view.checked_out')
       利用者に貸出している端末です。
     .highlight-inner
       %div.btn.btn-danger= t('view.owed_by_current_user_overdue')

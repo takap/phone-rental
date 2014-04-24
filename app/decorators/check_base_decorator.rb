@@ -6,7 +6,6 @@ module CheckBaseDecorator
   def note_view
     note.presence || t('view.na')
   end
-
   def status_view
     case status
       when CHECK_STATUS_DOMAIN.AVAILABLE
@@ -15,14 +14,14 @@ module CheckBaseDecorator
         t('view.reserved')
       when CHECK_STATUS_DOMAIN.READY
         t('view.ready')
-      when CHECK_STATUS_DOMAIN.UNAVAILABLE
-        t('view.unavailable')
-      when CHECK_STATUS_DOMAIN.UNAVAILABLE_OVERDUE
-        t('view.unavailable_overdue')
+      when CHECK_STATUS_DOMAIN.CHECKED_OUT
+        t('view.checked_out')
+      when CHECK_STATUS_DOMAIN.CHECKED_OUT_OVERDUE
+        t('view.checked_out_overdue')
       when CHECK_STATUS_DOMAIN.OWED_BY_CURRENT_USER
-        t('view.unavailable')
+        t('view.checked_out')
       when CHECK_STATUS_DOMAIN.OWED_BY_CURRENT_USER_OVERDUE
-        t('view.unavailable_overdue')
+        t('view.checked_out_overdue')
     end
   end
 
@@ -34,10 +33,10 @@ module CheckBaseDecorator
         CHECK_BUTTON_CLASS.RESERVED
       when CHECK_STATUS_DOMAIN.READY
         CHECK_BUTTON_CLASS.READY
-      when CHECK_STATUS_DOMAIN.UNAVAILABLE
-        CHECK_BUTTON_CLASS.UNAVAILABLE
-      when CHECK_STATUS_DOMAIN.UNAVAILABLE_OVERDUE
-        CHECK_BUTTON_CLASS.UNAVAILABLE_OVERDUE
+      when CHECK_STATUS_DOMAIN.CHECKED_OUT
+        CHECK_BUTTON_CLASS.CHECKED_OUT
+      when CHECK_STATUS_DOMAIN.CHECKED_OUT_OVERDUE
+        CHECK_BUTTON_CLASS.CHECKED_OUT_OVERDUE
       when CHECK_STATUS_DOMAIN.OWED_BY_CURRENT_USER
         CHECK_BUTTON_CLASS.OWED_BY_CURRENT_USER
       when CHECK_STATUS_DOMAIN.OWED_BY_CURRENT_USER_OVERDUE

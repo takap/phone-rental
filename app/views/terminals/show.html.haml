@@ -8,131 +8,131 @@
       = tt('Terminal.terminal_name')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:terminal_name]
+        = @terminal.terminal_name
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.carrier_name')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:carrier_name]
+        = @terminal.carrier_name
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.maker_name')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:maker_name]
+        = @terminal.maker_name
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.model_name')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:model_name]
+        = @terminal.model_name
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.volume')
     .col-sm-10
       %p.form-control-static
-        = "#{@terminal[:volume]} 台目"
+        = "#{@terminal.volume} 台目"
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.release_date')
     .col-sm-10
       %p.form-control-static
-        = format_date @terminal[:release_date]
+        = @terminal.release_date
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.default_os')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:default_os]
+        = @terminal.default_os
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.updated_os')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:updated_os]
+        = @terminal.updated_os
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.screen_inch')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:screen_inch]
+        = @terminal.screen_inch
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.screen_width_height')
     .col-sm-10
       %p.form-control-static
-        = "#{@terminal[:screen_width]} × #{@terminal[:screen_height]}"
+        = "#{@terminal.screen_width} × #{@terminal.screen_height}"
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.screen_density')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:screen_density]
+        = @terminal.screen_density
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.color')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:color]
+        = @terminal.color
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.phone_number')
     .col-sm-10
       %p.form-control-static
-        = nought_or_cross @terminal[:phone_number].present?
+        = nought_or_cross @terminal.phone_number.present?
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.sim')
     .col-sm-10
       %p.form-control-static
-        = nought_or_cross @terminal[:sim]
+        = nought_or_cross @terminal.sim
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.wifi')
     .col-sm-10
       %p.form-control-static
-        = nought_or_cross @terminal[:wifi]
+        = nought_or_cross @terminal.wifi
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.nfc')
     .col-sm-10
       %p.form-control-static
-        = nought_or_cross @terminal[:nfc]
+        = nought_or_cross @terminal.nfc
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.tablet')
     .col-sm-10
       %p.form-control-static
-        = nought_or_cross @terminal[:tablet]
+        = nought_or_cross @terminal.tablet
 
   .form-group
     %label.col-sm-2.control-label
       = tt('Terminal.note')
     .col-sm-10
       %p.form-control-static
-        = @terminal[:note].presence || t('view.na')
+        = @terminal.note.presence || t('view.na')
 
 .form-group
   .col-sm-offset-2.col-sm-10
     -if @check.present?
-      %div.btn.btn-warning= t('view.unavailable')
+      %div.btn.btn-danger= t('view.unavailable')
     -else
       = link_to t('view.new_check'), checks_new_path(terminal_id: @terminal.terminal_id), class: 'btn btn-primary'
     = link_to t('.back', default: t("helpers.links.back")), check_back_path(@terminal.category_id), class: 'btn btn-default'

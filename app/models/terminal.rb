@@ -3,6 +3,7 @@ class Terminal < ActiveRecord::Base
 
   def self.find_details_by_category category
     hash = ActiveRecord::Base.connection.select(<<-SQL
+        SELECT i.terminal_id, terminal_name, terminal_master_id, volume, phone_number, sim, wifi, carrier_id, maker_id, category_id, group_id, model_name, default_os, updated_os, screen_inch, screen_width, screen_height, screen_density_id, screen_density, color, release_date, tablet, nfc, carrier_name, maker_name, group_name, status FROM (
         SELECT terminal_id, terminal_name, terminal_master_id, volume, phone_number, sim, wifi, carrier_id, maker_id, category_id, group_id, model_name, default_os, updated_os, screen_inch, screen_width, screen_height, screen_density_id, h.size screen_density, color, release_date, tablet, nfc, carrier_name, maker_name, group_name FROM (
         SELECT terminal_id, terminal_name, terminal_master_id, volume, phone_number, sim, wifi, carrier_id, maker_id, category_id, group_id, model_name, default_os, updated_os, screen_inch, screen_width, screen_height, screen_density_id, color, release_date, tablet, nfc, carrier_name, maker_name, f.name group_name FROM (
         SELECT terminal_id, terminal_name, terminal_master_id, volume, phone_number, sim, wifi, carrier_id, maker_id, category_id, group_id, model_name, default_os, updated_os, screen_inch, screen_width, screen_height, screen_density_id, color, release_date, tablet, nfc, carrier_name, d.name maker_name FROM (
@@ -11,7 +12,8 @@ class Terminal < ActiveRecord::Base
         ) a LEFT OUTER JOIN carriers b ON a.carrier_id = b.id
         ) c LEFT OUTER JOIN makers d ON c.maker_id = d.id
         ) e LEFT OUTER JOIN groups f ON e.group_id = f.id
-        ) g LEFT OUTER JOIN screen_densities h ON g.screen_density_id = h.id;
+        ) g LEFT OUTER JOIN screen_densities h ON g.screen_density_id = h.id
+        ) i LEFT OUTER JOIN check_states j ON i.terminal_id = j.terminal_id;
     SQL
     )
     hash.map() { |item| OpenStruct.new(item) }
