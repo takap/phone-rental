@@ -18,9 +18,11 @@
       %th= model_class.human_attribute_name(:screen_inch)
       -if current_user.has_role? :admin
         %th= model_class.human_attribute_name(:screen_density)
-      %th= model_class.human_attribute_name(:phone_number)
+        %th= model_class.human_attribute_name(:phone_number)
+      %th= model_class.human_attribute_name(:sim)
       %th= model_class.human_attribute_name(:wifi)
       %th= model_class.human_attribute_name(:nfc)
+      %th= model_class.human_attribute_name(:tablet)
       %th= tt('TerminalMaster.release_date')
       -if current_user.has_role? :admin
         %th=t '.actions', :default => t("helpers.actions")
@@ -43,10 +45,10 @@
         -if current_user.has_role? :admin
           %td= terminal.screen_density
           %td= terminal.phone_number
-        -else
-          %td= nought_or_cross terminal.phone_number.present?
+        %td= nought_or_cross terminal.sim
         %td= nought_or_cross terminal.wifi
         %td= nought_or_cross terminal.nfc
+        %td= nought_or_cross terminal.tablet
         -if terminal.release_date.present?
           %td=l terminal.release_date
         -else

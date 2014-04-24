@@ -96,10 +96,10 @@
 
   .form-group
     %label.col-sm-2.control-label
-      = tt('Terminal.tablet')
+      = tt('Terminal.sim')
     .col-sm-10
       %p.form-control-static
-        = nought_or_cross @terminal[:tablet]
+        = nought_or_cross @terminal[:sim]
 
   .form-group
     %label.col-sm-2.control-label
@@ -114,6 +114,14 @@
     .col-sm-10
       %p.form-control-static
         = nought_or_cross @terminal[:nfc]
+
+  .form-group
+    %label.col-sm-2.control-label
+      = tt('Terminal.tablet')
+    .col-sm-10
+      %p.form-control-static
+        = nought_or_cross @terminal[:tablet]
+
 .form-group
   .col-sm-offset-2.col-sm-10
     -if @check.present?

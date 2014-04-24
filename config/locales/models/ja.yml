@@ -82,9 +82,10 @@ ja:
         screen_inch: 画面 インチ
         screen_width_height: 画面 幅 × 高さ
         screen_density: 画面密度
-        tablet: タブレット
+        sim: SIM
         wifi: Wi-Fi
         nfc: NFC
+        tablet: タブレット
         default_os_version_name: 初期OSバージョン名
         updated_os_version_name: 更新OSバージョン名
       user:
