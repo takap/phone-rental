@@ -32,7 +32,7 @@
         %td= terminal_master.screen_width
         %td= terminal_master.screen_height
         %td= terminal_master.screen_density.size
-        %td= terminal_master.release_date
+        %td= format_date(terminal_master.release_date)
         %td= terminal_master.tablet
         %td= terminal_master.nfc
         %td=l terminal_master.created_at

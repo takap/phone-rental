@@ -29,7 +29,7 @@ class TerminalMastersController < ApplicationController
 
     respond_to do |format|
       if @terminal_master.save
-        format.html { redirect_to @terminal_master, notice: 'Terminal master was successfully created.' }
+        format.html { redirect_to @terminal_master, notice: t('view.create_message', target: t('activerecord.attributes.models.terminal_master')) }
         format.json { render action: 'show', status: :created, location: @terminal_master }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class TerminalMastersController < ApplicationController
   def update
     respond_to do |format|
       if @terminal_master.update(terminal_master_params)
-        format.html { redirect_to @terminal_master, notice: 'Terminal master was successfully updated.' }
+        format.html { redirect_to @terminal_master, notice: t('view.update_message', target: t('activerecord.attributes.models.terminal_master')) }
         format.json { render action: 'show', status: :ok, location: @terminal_master }
       else
         format.html { render action: 'edit' }
@@ -70,6 +70,6 @@ class TerminalMastersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def terminal_master_params
-      params.require(:terminal_master).permit(:carrier_id, :maker_id, :series_id, :model_id, :default_os, :screen_inch_id, :screen_width_id, :screen_height_id, :screen_density_id, :release_date, :tablet, :nfc)
+      params.require(:terminal_master).permit(:carrier_id, :maker_id, :series_id, :model_name, :default_os, :screen_inch_id, :screen_width_id, :screen_height_id, :screen_density_id, :release_date, :tablet, :nfc)
     end
 end

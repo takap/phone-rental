@@ -5,13 +5,8 @@ class TerminalsController < ApplicationController
   # GET /terminals.json
   def index
     terminals_repo = TerminalsRepository.new
-    if @query = params[:q].presence
-      @terminals = terminals_repo.find_by_search_words @query
-      @title = t('terminals.index.search_title', key: @query)
-    else
-      @terminals = terminals_repo.find_detail
-      @title = t('terminals.index.title')
-    end
+    @terminals = terminals_repo.find_all
+    @title = t('terminals.index.title')
   end
 
   # GET /terminals/ios
@@ -62,7 +57,7 @@ class TerminalsController < ApplicationController
 
     respond_to do |format|
       if @terminal.save
-        format.html { redirect_to @terminal, notice: 'Terminal was successfully created.' }
+        format.html { redirect_to @terminal, notice: t('view.create_message', target: t('activerecord.attributes.models.terminal')) }
         format.json { render action: 'show', status: :created, location: @terminal }
       else
         format.html { render action: 'new' }
@@ -76,7 +71,7 @@ class TerminalsController < ApplicationController
   def update
     respond_to do |format|
       if @terminal.update(terminal_params)
-        format.html { redirect_to @terminal, notice: 'Terminal was successfully updated.' }
+        format.html { redirect_to @terminal, notice: t('view.update_message', target: t('activerecord.attributes.models.terminal')) }
         format.json { render action: 'show', status: :ok, location: @terminal }
       else
         format.html { render action: 'edit' }

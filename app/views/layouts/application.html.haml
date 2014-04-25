@@ -40,6 +40,29 @@
               = link_to t('view.feature') , terminals_feature_path, :class => 'navbar-link'
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
+              %li.dropdown
+                %a.dropdown-toggle.login-user{"data-toggle" => "dropdown", :href => ""}
+                  = t('view.edit_terminal_data')
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    = link_to '/carriers' do
+                      = t('activerecord.attributes.models.carrier')
+                  %li
+                    = link_to '/makers' do
+                      = t('activerecord.attributes.models.maker')
+                  %li
+                    = link_to '/groups' do
+                      = t('activerecord.attributes.models.group')
+                  %li
+                    = link_to '/screen_densities' do
+                      = t('activerecord.attributes.models.screen_density')
+                  %li
+                    = link_to '/terminal_masters' do
+                      = t('activerecord.attributes.models.terminal_master')
+                  %li
+                    = link_to '/terminals' do
+                      = t('activerecord.attributes.models.terminal')
               %li
                 = link_to t('view.edit_profile', user_name: current_user.last_name), edit_user_registration_path, :class => 'navbar-link'
               %li
@@ -47,5 +70,5 @@
     .container
       = bootstrap_flash
       = yield
-      %footer.center-horizontal
+      %footer.center-horizontal.footer
         %p=t('view.footer', service_name: t('view.service_name'))

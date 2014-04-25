@@ -1,15 +1,31 @@
 = simple_form_for @terminal_master, :html => { :class => 'form-horizontal' } do |f|
-  = f.input :carrier_id
-  = f.input :maker_id
-  = f.input :series_id
+  .form-group.string.optional.terminal_master
+    = f.label :carrier_id, class: 'col-sm-2 control-label'
+    .form-group
+      .col-sm-6
+        = f.collection_select :carrier_id, Terminal.all, :id, :name, {}, {class: 'form-control'}
+  .form-group.string.optional.terminal_master
+    = f.label :maker_id, class: 'col-sm-2 control-label'
+    .form-group
+      .col-sm-6
+        = f.collection_select :maker_id, Maker.all, :id, :name, {}, {class: 'form-control'}
+  .form-group.string.optional.terminal_master
+    = f.label :group_id, class: 'col-sm-2 control-label'
+    .form-group
+      .col-sm-6
+        = f.collection_select :group_id, Group.all, :id, :name, {}, {class: 'form-control'}
   = f.input :model_name
   = f.input :default_os
   = f.input :screen_inch
   = f.input :screen_width
   = f.input :screen_height
-  = f.input :screen_density_id
+  .form-group.string.optional.terminal_master
+    = f.label :screen_density_id, class: 'col-sm-2 control-label'
+    .form-group
+      .col-sm-6
+        = f.collection_select :screen_density_id, ScreenDensity.all, :id, :size, {}, {class: 'form-control'}
   = f.input :release_date
   = f.input :tablet
   = f.input :nfc
-  = f.button :submit, :class => 'btn-primary'
+  = f.button :submit, class: 'btn-primary col-sm-offset-2'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), terminal_masters_path, :class => 'btn btn-default'

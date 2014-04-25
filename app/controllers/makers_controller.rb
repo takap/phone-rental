@@ -29,7 +29,7 @@ class MakersController < ApplicationController
 
     respond_to do |format|
       if @maker.save
-        format.html { redirect_to @maker, notice: 'Maker was successfully created.' }
+        format.html { redirect_to @maker, notice: t('view.create_message', target: t('activerecord.attributes.models.maker')) }
         format.json { render action: 'show', status: :created, location: @maker }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class MakersController < ApplicationController
   def update
     respond_to do |format|
       if @maker.update(maker_params)
-        format.html { redirect_to @maker, notice: 'Maker was successfully updated.' }
+        format.html { redirect_to @maker, notice: t('view.update_message', target: t('activerecord.attributes.models.maker')) }
         format.json { render action: 'show', status: :ok, location: @maker }
       else
         format.html { render action: 'edit' }

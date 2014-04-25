@@ -1,6 +1,11 @@
 class TerminalsRepository
   include StatusModule
 
+  def find_all
+    terminals = Terminal.find_details
+    get_terminal_details(terminals)
+  end
+
   def find_feature
     terminals = Terminal.find_details_by_category PHONE_CATEGORY.FEATURE
     get_terminal_details(terminals)

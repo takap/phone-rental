@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'dashboard#index'
 
+  get 'dashboard' => 'dashboard#index'
   get 'dashboard/index'
   get 'dashboard/admin'
-  get 'dashboard/client'
 
   get 'checks/new'
   post 'checks/create' => 'checks#create'

@@ -1,6 +1,10 @@
 = simple_form_for @terminal, :html => { :class => 'form-horizontal' } do |f|
   = f.input :name
-  = f.input :terminal_master_id
+  .form-group.string.optional.terminal_master
+    = f.label :terminal_master_id, class: 'col-sm-2 control-label'
+    .form-group
+      .col-sm-6
+        = f.collection_select :terminal_master_id, TerminalMaster.all, :id, :model_name, {}, {class: 'form-control'}
   = f.input :volume
   = f.input :color
   = f.input :updated_os
@@ -8,5 +12,5 @@
   = f.input :sim
   = f.input :wifi
   = f.input :note
-  = f.button :submit, :class => 'btn-primary'
+  = f.button :submit, class: 'btn-primary col-sm-offset-2'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), terminals_path, :class => 'btn btn-default'

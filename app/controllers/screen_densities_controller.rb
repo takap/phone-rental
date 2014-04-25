@@ -29,7 +29,7 @@ class ScreenDensitiesController < ApplicationController
 
     respond_to do |format|
       if @screen_density.save
-        format.html { redirect_to @screen_density, notice: 'Screen density was successfully created.' }
+        format.html { redirect_to @screen_density, notice: t('view.create_message', target: t('activerecord.attributes.models.screen_density')) }
         format.json { render action: 'show', status: :created, location: @screen_density }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class ScreenDensitiesController < ApplicationController
   def update
     respond_to do |format|
       if @screen_density.update(screen_density_params)
-        format.html { redirect_to @screen_density, notice: 'Screen density was successfully updated.' }
+        format.html { redirect_to @screen_density, notice: t('view.update_message', target: t('activerecord.attributes.models.screen_density')) }
         format.json { render action: 'show', status: :ok, location: @screen_density }
       else
         format.html { render action: 'edit' }

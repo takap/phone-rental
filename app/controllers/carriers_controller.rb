@@ -29,7 +29,7 @@ class CarriersController < ApplicationController
 
     respond_to do |format|
       if @carrier.save
-        format.html { redirect_to @carrier, notice: 'Carrier was successfully created.' }
+        format.html { redirect_to @carrier, notice: t('view.create_message', target: t('activerecord.attributes.models.carrier')) }
         format.json { render action: 'show', status: :created, location: @carrier }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class CarriersController < ApplicationController
   def update
     respond_to do |format|
       if @carrier.update(carrier_params)
-        format.html { redirect_to @carrier, notice: 'Carrier was successfully updated.' }
+        format.html { redirect_to @carrier, notice: t('view.update_message', target: t('activerecord.attributes.models.carrier')) }
         format.json { render action: 'show', status: :ok, location: @carrier }
       else
         format.html { render action: 'edit' }
