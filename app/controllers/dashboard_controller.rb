@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   def index
     if current_user.has_role? :admin
-      redirect_to action: 'admin'
+      redirect_to dashboard_admin_path
       return false
     end
     repo = ChecksRepository.new
@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
 
   def admin
     unless current_user.has_role? :admin
-      redirect_to action: 'index'
+      redirect_to dashboard_index_path
       return false
     end
     repo = ChecksRepository.new
