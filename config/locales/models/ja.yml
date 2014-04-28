@@ -97,7 +97,7 @@ ja:
         division: 部門名
         manager_name: マネージャ名
         email: メールアドレス
-        password: パスワード
+        password: 新しいパスワード
         password_confirmation: パスワード確認
         current_password: 現在のパスワード
       division:

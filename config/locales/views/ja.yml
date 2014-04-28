@@ -26,11 +26,11 @@ ja:
     footer: "%{service_name} は Google Chrome でご利用ください"
 
     # devise general
-    devise_edit: プロフィール編集
     devise_update: 更新
     devise_password_hint: 変更しない場合は空欄のままで結構です。
     devise_current_password_hint: 変更確認のため現在のパスワードを入力してください。
-    devise_reset_password: パスワード初期化メールを送信
+    devise_reset_password: パスワード再設定メールを送信
+    devise_change_password: パスワードを変更する
 
     # sign up
     signup: ユーザ登録
@@ -38,7 +38,10 @@ ja:
     # login
     login: ログイン
     remember_me: 保存する
-    forget_password: パスワードを忘れた場合はこちら
+    new_password: パスワード再設定
+    resend_confirm_mail: 確認メールの再送信
+    resend_unlock_mail: アカウント凍結解除メールの再送信
+    sign_in_with: でログイン
 
     # dashboard
     user_terminals: 予約中または貸出中の端末
@@ -162,3 +165,17 @@ ja:
       title: ダッシュボード
     admin:
       title: ダッシュボード
+  devise:
+    passwords:
+      edit:
+        title: パスワード変更
+      new:
+        title: パスワード再設定
+    registrations:
+      edit:
+        title: プロフィール編集
+      new:
+        title: ユーザ登録
+    sessions:
+      new:
+        title: ログイン

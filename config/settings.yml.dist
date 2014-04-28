@@ -1,4 +1,5 @@
 defaults: &defaults
+  mailer_sender:
 
 development:
   <<: *defaults
