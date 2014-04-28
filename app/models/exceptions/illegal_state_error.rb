@@ -1,0 +1,1 @@
+class IllegalStateError < StandardError; end

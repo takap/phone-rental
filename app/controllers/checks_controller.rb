@@ -5,11 +5,13 @@ class ChecksController < ApplicationController
 
   def create
     repo = ChecksRepository.new
-    repo.create(current_user.id, check_params)
+    check_result = repo.create(current_user.id, check_params)
+    check_state = repo.get_check_by_check_id(check_result.id)
     terminal = Terminal.where(id: check_params[:terminal_id]).first
     terminal_master = TerminalMaster.where(id: terminal[:terminal_master_id]).first
     redirect_to '/'
     flash[:success] = t('view.check_create_message', terminal_name: terminal_master.model_name)
+    NoticeMailer.sendmail_reserved_to_client(current_user, terminal_master, check_state).deliver
   end
 
   def show

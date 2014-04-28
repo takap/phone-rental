@@ -19,7 +19,7 @@ class ChecksRepository
 
     check_state = CheckState.where(terminal_id: check_params[:terminal_id]).first
     if check_state.blank?
-      CheckState.create(
+      check_state = CheckState.create(
           terminal_id: check_params[:terminal_id],
           user_id: current_user_id,
           status: CHECK_STATUS_DB.RESERVED,
@@ -30,18 +30,9 @@ class ChecksRepository
           updated_at: DateTime.now,
       )
     else
-      check_state.update_attributes(
-          {
-              user_id: current_user_id,
-              status: CHECK_STATUS_DB.RESERVED,
-              take_out: check_params[:take_out],
-              note: check_params[:note],
-              due_date: due_date,
-              created_at: DateTime.now,
-              updated_at: DateTime.now,
-          }
-      )
+      raise IllegalStateError
     end
+    check_state
   end
 
   def update(current_user_id, check_params)

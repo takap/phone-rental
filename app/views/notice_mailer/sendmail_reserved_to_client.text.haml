@@ -1,0 +1,15 @@
+= "#{@user.last_name} #{@user.first_name}さん"
+\
+= "#{@terminal_master.model_name} の貸出予約が正常に完了しました。"
+端末の貸出準備が整い次第、事務局から再度ご連絡させていただきます。
+メールが届くまでしばらくお待ちください。
+\
+[予約内容]
+= "機種名:　　 #{@terminal_master.model_name}"
+= "申込日時:　 #{@check_state.created_at}"
+= "返却予定日: #{@check_state.due_date}"
+= "持ち出し:　 #{@check_state.take_out_view}"
+= "備考:　　　 #{@check_state.note}"
+\
+なお、貸出準備の状況はダッシュボードで確認することができます。
+= dashboard_url

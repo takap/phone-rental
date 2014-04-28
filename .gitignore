@@ -41,6 +41,7 @@ pickle-email-*.html
 # Setting files
 config/initializers/google_analytics.rb
 config/environments/production.rb
+config/environments/development.rb
 config/settings.yml
 config/database.yml
 config/secrets.yml

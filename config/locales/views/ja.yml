@@ -86,6 +86,7 @@ ja:
     # message
     create_message: "%{target}を作成しました。"
     update_message: "%{target}を更新しました。"
+    state_error_message: "異常な状態遷移が発生しました。二度押しなどの原因が考えられます。"
 
   carriers:
     index:
@@ -179,3 +180,6 @@ ja:
     sessions:
       new:
         title: ログイン
+  notice_mailer:
+    sendmail_reserved_to_client:
+      subject: "[ケータイ端末貸出] %{model_name}の予約が完了しました"
