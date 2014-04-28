@@ -19,10 +19,13 @@ class NoticeMailer < ActionMailer::Base
   #
   #   en.notice_mailer.sendmail_reserved_to_admin.subject
   #
-  def sendmail_reserved_to_admin
-    @greeting = "Hi"
+  def sendmail_reserved_to_admin(user, terminal, terminal_master, check_state)
+    @user = user
+    @terminal = terminal
+    @terminal_master = terminal_master
+    @check_state = check_state
 
-    mail to: "to@example.org"
+    mail to: ENV['mailer_sender'], subject: t('.subject', model_name: @terminal_master.model_name)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

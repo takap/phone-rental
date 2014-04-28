@@ -12,6 +12,7 @@ class ChecksController < ApplicationController
     redirect_to '/'
     flash[:success] = t('view.check_create_message', terminal_name: terminal_master.model_name)
     NoticeMailer.sendmail_reserved_to_client(current_user, terminal_master, check_state).deliver
+    NoticeMailer.sendmail_reserved_to_admin(current_user, terminal, terminal_master, check_state).deliver
   end
 
   def show

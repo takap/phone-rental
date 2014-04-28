@@ -1,3 +1,17 @@
-NoticeMailer#sendmail_reserved_to_admin
-
-= @greeting + ", find me in app/views/notice_mailer/sendmail_reserved_to_admin.text.haml"
+担当者さま
+\
+= "#{@user.division} #{@user.manager_name} 所属の #{@user.last_name} #{@user.first_name} さんが #{@terminal_master.model_name} の貸出予約を行いました。"
+端末の貸出準備を行い、ダッシュボードから状態を更新してください。
+= dashboard_url
+\
+「準備済」に更新すると、システムから利用者にメールで通知されます。
+\
+[予約内容]
+= "機種名:　　 #{@terminal_master.model_name}"
+= "端末記号:　 #{@terminal.name}"
+= "色:　　　　 #{@terminal.color}"
+= "電話番号:　 #{@terminal.phone_number}"
+= "申込日時:　 #{@check_state.created_at}"
+= "返却予定日: #{@check_state.due_date}"
+= "持ち出し:　 #{@check_state.take_out_view}"
+= "備考:　　　 #{@check_state.note}"
