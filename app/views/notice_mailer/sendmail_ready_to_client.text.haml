@@ -1,3 +1,15 @@
-NoticeMailer#sendmail_ready
-
-= @greeting + ", find me in app/views/notice_mailer/sendmail_ready_to_client.text.haml"
+= "#{@user.last_name} #{@user.first_name} さん"
+\
+= "#{@terminal_master.model_name} の貸出準備ができました。"
+事務局までお越しください。
+\
+[予約内容]
+= "機種名:　　 #{@terminal_master.model_name}"
+= "端末記号:　 #{@terminal.name}"
+= "申込日時:　 #{@check_state.created_at}"
+= "返却予定日: #{@check_state.due_date}"
+= "持ち出し:　 #{@check_state.take_out_view}"
+= "備考:　　　 #{@check_state.note}"
+\
+なお、貸出準備の状況はダッシュボードで確認することができます。
+= dashboard_url

@@ -7,7 +7,7 @@ class ChecksController < ApplicationController
     repo = ChecksRepository.new
     check_result = repo.create(current_user.id, check_params)
     check_state = repo.get_check_by_check_id(check_result.id)
-    terminal = Terminal.where(id: check_params[:terminal_id]).first
+    terminal = Terminal.find(check_params[:terminal_id])
     terminal_master = TerminalMaster.where(id: terminal[:terminal_master_id]).first
     redirect_to '/'
     flash[:success] = t('view.check_create_message', terminal_name: terminal_master.model_name)
@@ -25,8 +25,13 @@ class ChecksController < ApplicationController
   def update
     repo = ChecksRepository.new
     repo.update(current_user.id, check_params)
-    terminal = Terminal.where(id: check_params[:terminal_id]).first
+    check_state = repo.get_check_by_terminal_id(check_params[:terminal_id])
+    client = User.find(check_state.user_id)
+    terminal = Terminal.find(check_params[:terminal_id])
     terminal_master = TerminalMaster.where(id: terminal[:terminal_master_id]).first
+    if check_state.status == CHECK_STATUS_DOMAIN.READY
+      NoticeMailer.sendmail_ready_to_client(client, terminal, terminal_master, check_state).deliver
+    end
     redirect_to '/'
     flash[:success] = t('view.check_update_message', terminal_name: terminal_master.model_name)
   end

@@ -53,13 +53,14 @@ class ChecksRepository
     if next_status == CHECK_STATUS_DB.AVAILABLE
       check_state.destroy
     else
-      check_state.update_attributes(
+      check_state = check_state.update_attributes(
           {
               status: next_status,
               note: check_params[:note],
           }
       )
     end
+    check_state
   end
 
   def get_checks_on_client_dashboard_by_user_id(user_id)
@@ -102,6 +103,21 @@ class ChecksRepository
 
   def get_check_by_check_id(id)
     check_state = CheckState.where(id: id).first
+    Check.new(
+        id: check_state[:id],
+        terminal_id: check_state[:terminal_id],
+        user_id: check_state[:user_id],
+        status: check_status(check_state),
+        take_out: check_state[:take_out],
+        note: check_state[:note],
+        due_date: format_date(check_state[:due_date]),
+        created_at: format_datetime(check_state[:created_at]),
+        updated_at: format_datetime(check_state[:updated_at]),
+    )
+  end
+
+  def get_check_by_terminal_id(terminal_id)
+    check_state = CheckState.where(terminal_id: terminal_id).first
     Check.new(
         id: check_state[:id],
         terminal_id: check_state[:terminal_id],
